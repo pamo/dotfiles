@@ -20,7 +20,11 @@ brew install trash
 # utils
 brew install tree
 brew install translate-shell
-
+brew install slack
+brew install dropbox
+brew install google-chrome
+brew install spectacle
+brew install 1password
 
 # bash config
 git clone --depth=1 https://github.com/pamo/bash-it.git ~/.bash_it
