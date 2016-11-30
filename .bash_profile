@@ -1,40 +1,31 @@
-export PATH=/usr/local/Cellar/python/2.7.9/bin:$PATH:~/bin
-export PATH=$PATH:/usr/local/bin/
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin"
-export TERM=xterm-256color
+#!/usr/bin/env bash
 
-export NVM_DIR="$HOME/.nvm"
-source /usr/local/opt/nvm/nvm.sh
+# Path to the bash it configuration
+export BASH_IT="/Users/loaner/.bash_it"
 
-alias s=subl
-alias g=git
-alias e="emacsclient -nw --alternate-editor="" -c "$@""
-alias y=yarn
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='minimal'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
 
-source ~/.git-prompt.sh
-export PROMPT_COMMAND='__git_ps1 "\[\033[0;31m\]\u\[\033[0m\]@\[\033[0;34m\]\h\[\033[0;36m\] \w\[\033[0m\]" "\n\[\033[32m\]»\[\033[0m\] "'
-export HISTFILESIZE=10000
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWUPSTREAM="auto"
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# Don't check mail when opening terminal.
+unset MAILCHECK
 
-alias grep='grep --color=auto'
-alias ls='ls -G'
-alias ll='ls -la'
-alias gbc="git branch 2> /dev/null | grep -e ^* | awk '{ print \$2 }' | pbcopy"
-alias be='bundle exec'
-alias rm=trash
-alias t='trans -brief pt:es'
-alias reload='source ~/.bash_profile'
+# Change this to your console based IRC client of choice.
+export IRC_CLIENT='irssi'
 
-# Load specific bash profile for the project I'm current working on
-if [ -f ~/.current_project_bash ]; then
-  source ~/.current_project_bash
-fi
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/xvzf/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+eval "$(rbenv init -)"
+# Load Bash It
+source $BASH_IT/bash_it.sh

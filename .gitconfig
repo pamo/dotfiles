@@ -1,30 +1,84 @@
 [core]
   editor = vim
+  pager = less -FRSX
+  autocrlf = input
+  safecrlf = true
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  whitespace = space-before-tab,indent-with-non-tab,trailing-space
 [user]
-	email = rogeriocfj+github@gmail.com
-	name = Rogerio Chaves
+	email = pamela.ocampo@gmail.com
+	name = Pamela Ocampo
 [alias]
+  amend = commit --amend
+  ap = add -p
+  br = branch
+  ca = commit --amend -C HEAD
+  ci = commit
+  cleanall = clean -f -d
+  co = checkout
+  current-branch = rev-parse --abbrev-ref HEAD
+  df = diff --cached --color --color-words
+  dff = diff --color --color-words
+  graph = log --graph --decorate --oneline --branches
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  l = log
+  lg = log -10 --graph --stat --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  ll = log --pretty=oneline
+  pfwl = push --force-with-lease
+  pr = pull --rebase
+  prom = pull --rebase origin master
   s = status -sb
   st = status
-	df = diff --cached --color --color-words
-	dff = diff --color --color-words
-	current-branch = rev-parse --abbrev-ref HEAD
-	graph = log --graph --decorate --oneline --branches
-	l = log
-	co = checkout
-  ci = commit
+  type = cat-file -t
   undo = reset --soft HEAD^
-  ll = log --pretty=oneline
-  prom = pull --rebase origin master
-  pfwl = push --force-with-lease
-  ap = add -p
 [color]
-	ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    pager = true
+    status = auto
+    ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = red
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+[help]
+	autocorrect = 1
 [push]
 	default = current
 [pull]
   default = simple
+# Use `origin` as the default remote on the `master` branch in all cases
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+# URL shorthands
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+    insteadOf = "github:"
+[url "git@gist.github.com:"]
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"
 [github]
-  user = rogeriochaves
+  user = pamo
 [credential]
   helper = osxkeychain
