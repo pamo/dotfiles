@@ -1,14 +1,20 @@
 #!/bin/sh
-mkdir ~/.tmp
 
+# Install Command Line Tools without Xcode
+xcode-select --install
+
+echo "Checking for updates..."
+softwareupdate --install --all
+
+echo "Setting OSX Defaults..."
+./osx_defaults.sh
+
+mkdir ~/.tmp
 ln -s "$(pwd)/.bash_profile" ~
 ln -s "$(pwd)/.gitconfig" ~
 ln -s "$(pwd)/.gitignore" ~
 ln -s "$(pwd)/.gitattributes" ~
 ln -s "$(pwd)/.bash-it" ~
-
-# Install Command Line Tools without Xcode
-xcode-select --install
 
 # vim
 ln -s "$(pwd)/.vim" ~
@@ -18,6 +24,11 @@ git submodule init
 git submodule update
 
 # utils
+# Homebrew
+if [[ ! -x /usr/local/bin/brew ]] ; then
+				/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 brew tap homebrew/versions
 brew tap caskroom/cask
 brew tap caskroom/versions
@@ -69,9 +80,6 @@ cask_packages=(
 )
 brew cask install ${cask_packages[@]}
 
-# bash config
+# Bash Config
 ./.bash-it/install.sh
-
-echo "Setting OSX Defaults..."
-./osx_defaults.sh
 exit 0

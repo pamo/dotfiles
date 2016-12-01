@@ -1,6 +1,11 @@
 #!/bin/sh
+
+echo "Setting write permissions on /Library/Preferences"
+sudo chmod 755 /Library/Preferences
+
 # Set Computer Name
 COMPUTER="PurpleNurple"
+echo "Setting computer name to $COMPUTER"
 sudo scutil --set ComputerName $COMPUTER && \
 sudo scutil --set HostName $COMPUTER && \
 sudo scutil --set LocalHostName $COMPUTER && \
