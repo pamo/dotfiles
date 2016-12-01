@@ -18,13 +18,49 @@ defaults write -g KeyRepeat -int 0.5
 brew install trash
 
 # utils
-brew install tree
-brew install translate-shell
-brew install slack
-brew install dropbox
-brew install google-chrome
-brew install spectacle
-brew install 1password
+brew_packages=(
+	autoconf
+	autojump
+	bash-completion
+	dos2unix
+	git
+	git-extras
+	gti
+	htop-osx
+	markdown
+	pkg-config
+	rbenv
+	rbenv-gemset
+	readline
+	rsync
+	ruby-build
+	ssh-copy-id
+	the_silver_searcher
+	tree
+	unrar
+	vim
+	wget
+)
+brew install ${brew_packages[@]}
+
+
+# apps
+cask_packages=(
+	1password
+	alternote
+	bartender
+	dash
+	dropbox
+	fantastical
+	google-chrome
+	hipchat
+	lastfm
+	screenhero
+	slack
+	spectacle
+	spotify
+)
+brew cask install {cask_packages[@]}
 
 # bash config
 git clone --depth=1 https://github.com/pamo/bash-it.git ~/.bash_it
