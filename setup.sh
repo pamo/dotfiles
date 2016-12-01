@@ -5,7 +5,7 @@ ln -s "$(pwd)/.bash_profile" ~
 ln -s "$(pwd)/.gitconfig" ~
 ln -s "$(pwd)/.gitignore" ~
 ln -s "$(pwd)/.gitattributes" ~
-ln -s "$(pwd)/.bash_it" ~
+ln -s "$(pwd)/.bash-it" ~
 
 # Install Command Line Tools without Xcode
 xcode-select --install
@@ -70,7 +70,7 @@ cask_packages=(
 brew cask install ${cask_packages[@]}
 
 # bash config
-./.bash_it/install.sh
+./.bash-it/install.sh
 
 echo "Setting OSX Defaults..."
 ./osx_defaults.sh
