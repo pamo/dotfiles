@@ -1,23 +1,28 @@
 #!/bin/sh
+mkdir ~/.tmp
 
 ln -s "$(pwd)/.bash_profile" ~
 ln -s "$(pwd)/.gitconfig" ~
 ln -s "$(pwd)/.gitignore" ~
 ln -s "$(pwd)/.gitattributes" ~
+ln -s "$(pwd)/.bash_it" ~
+
+# Install Command Line Tools without Xcode
+xcode-select --install
 
 # vim
 ln -s "$(pwd)/.vim" ~
 mkdir ~/.vim/tmp
+
 git submodule init
 git submodule update
 
-# speed up keystroke
-defaults write -g KeyRepeat -int 0.5
-
-# trash
-brew install trash
-
 # utils
+brew tap homebrew/versions
+brew tap caskroom/cask
+brew tap caskroom/versions
+brew tap caskroom/fonts
+
 brew_packages=(
 	autoconf
 	autojump
@@ -32,21 +37,22 @@ brew_packages=(
 	rbenv
 	rbenv-gemset
 	readline
-	rsync
 	ruby-build
 	ssh-copy-id
 	the_silver_searcher
+	tig
 	tree
+	trash
 	unrar
 	vim
 	wget
 )
 brew install ${brew_packages[@]}
 
-
 # apps
 cask_packages=(
 	1password
+	alfred
 	alternote
 	bartender
 	dash
@@ -54,16 +60,18 @@ cask_packages=(
 	fantastical
 	google-chrome
 	hipchat
+	iterm2-beta
 	lastfm
 	screenhero
 	slack
 	spectacle
 	spotify
 )
-brew cask install {cask_packages[@]}
+brew cask install ${cask_packages[@]}
 
 # bash config
-git clone --depth=1 https://github.com/pamo/bash-it.git ~/.bash_it
-cd ~/.bash_it && ./install.sh
+./.bash_it/install.sh
 
+echo "Setting OSX Defaults..."
+./osx_defaults.sh
 exit 0
