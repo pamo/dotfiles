@@ -224,4 +224,16 @@ defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 # Show all processes in Activity Monitor
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
+###############################################################################
+# Login Items
+###############################################################################
+echo 'Adding Login Items'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/1password.app", name:"1password", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Alfred 3.app", name:"Alfred", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Slack.app", name:"Slack", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Spectacle.app", name:"Spectacle", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Google Chrome.app", name:"Google Chrome", hidden:true}'
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
