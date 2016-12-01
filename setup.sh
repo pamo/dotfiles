@@ -82,4 +82,7 @@ brew cask install ${cask_packages[@]}
 
 # Bash Config
 ./.bash-it/install.sh
+
+# Install iterm themes
+open iterm/*.itermcolors
 exit 0
