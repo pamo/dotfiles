@@ -113,8 +113,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
 # Screen Saver                                                                #
 ###############################################################################
 
-# Require password 15 minutes after sleep or screen saver begins
-defaults write com.apple.screensaver askForPasswordDelay -int 900
+# Require password 5 minutes after sleep or screen saver begins
+defaults write com.apple.screensaver askForPasswordDelay -int 300
 
 ###############################################################################
 # Finder                                                                      #
