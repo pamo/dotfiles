@@ -18,6 +18,7 @@ ln -s "$(pwd)/.bash-it" ~
 
 # vim
 ln -s "$(pwd)/.vim" ~
+ln -s "$(pwd)/.vim/.vimrc" ~
 mkdir ~/.vim/tmp
 
 git submodule init

@@ -1,11 +1,9 @@
-execute pathogen#infect()
+set nocp
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
 syntax on
 filetype plugin indent on
-
-runtime vimrc.d/general-options.vim
-runtime vimrc.d/abbreviations.vim
-runtime vimrc.d/auto-commands.vim
-runtime vimrc.d/mappings.vim
+call pathogen#infect()
 
 set directory=~/.vim/tmp
 set paste
@@ -13,7 +11,7 @@ set clipboard+=unnamed
 
 set t_Co=256
 set background=dark
-colorscheme Tomorrow-Night-Eighties
+
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
 autocmd BufRead,BufNewFile *.md set spell
@@ -54,22 +52,6 @@ set foldlevel=1
 set visualbell
 set noerrorbells
 set noswapfile
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers = ['rubylint']
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-highlight SyntasticErrorLine guibg=#CB0900
-highlight SyntasticWarningLine guibg=#EBEF00
-
 " Disable help menu
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -85,7 +67,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nmap <silent> <F3> :NERDTreeToggle<CR>
 map <F7> mzgg=G`z " re-indent file
 noremap <F8> :Autoformat<CR>
 
@@ -130,25 +111,18 @@ nnoremap <silent> <Leader>r :call mappings#cycle_numbering()<CR>
 " As this one is somewhat destructive and relatively close to the
 " oft-used <leader>a mapping, make this one a double key-stroke.
 nnoremap <silent> <Leader>zz :call mappings#zap()<CR>
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-  let g:ag_working_path_mode="ra"
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 :au FocusLost * :wa " Autosave but warn of untitled buffers
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g'\"" | endif
 endif
+
+runtime vimrc.d/airline.vim
+runtime vimrc.d/auto-commands.vim
+runtime vimrc.d/ctrlp.vim
+runtime vimrc.d/mappings.vim
+runtime vimrc.d/syntastic.vim
+runtime vimrc.d/nerdtree.vim
+
 set runtimepath^=~/.vim/bundle/ag

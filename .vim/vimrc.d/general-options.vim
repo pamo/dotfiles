@@ -1,5 +1,3 @@
-colorscheme jellybeans
-
 filetype plugin indent on
 
 set autoindent
@@ -7,9 +5,7 @@ set autoread
 set autowrite
 set autowriteall
 set backspace=indent,eol,start
-set colorcolumn=80
 set conceallevel=1
-set cursorline
 set directory=~/.vim/swap//
 set encoding=utf-8
 set expandtab
