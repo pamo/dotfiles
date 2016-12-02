@@ -1,15 +1,13 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
+rm -r ~/.iterm
+rm -rf ~/.bash-it
+rm -rf ~/.inputrc
+rm -rf ~/.tmp
 rm ~/.bash_profile
-rm ~/.bash-it
+rm ~/.editorconfig
+rm ~/.gitattributes
 rm ~/.gitconfig
 rm ~/.gitignore
-rm -r ~/.iterm
-
-# vim
 rm ~/.vim
-
-# speed up keystroke
-defaults delete NSGlobalDomain KeyRepeat
 
 exit 0

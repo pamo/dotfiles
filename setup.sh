@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Install Command Line Tools without Xcode
 xcode-select --install

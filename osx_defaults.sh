@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "Setting write permissions on /Library/Preferences"
 sudo chmod 755 /Library/Preferences
