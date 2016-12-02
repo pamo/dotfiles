@@ -177,4 +177,4 @@
 	url = git@github.com:christoomey/vim-tmux-navigator.git
 [submodule ".bash-it"]
 	path = .bash-it
-	url = git@github.com:Bash-it/bash-it.git
+	url = git@github.com:pamo/bash-it.git
