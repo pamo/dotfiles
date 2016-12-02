@@ -11,6 +11,7 @@ set clipboard+=unnamed
 
 set t_Co=256
 set background=dark
+colorscheme Tomorrow-Night-Eighties
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
