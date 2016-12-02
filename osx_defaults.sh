@@ -65,8 +65,16 @@ defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
 defaults write com.apple.dock mru-spaces -bool false
 
 # Keyboard: Key Repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean false
-defaults write -g KeyRepeat -int 0.2
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean true
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0.5
+
+# Automatically illuminate built-in MacBook keyboard in low light
+defaults write com.apple.BezelServices kDim -bool true
+
+# Turn off keyboard illumination when computer is not used for 5 minutes
+defaults write com.apple.BezelServices kDimTime -int 300
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -82,6 +90,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Enable access for assistive devices
+echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
+sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
+
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
@@ -90,6 +102,12 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Function keys
 defaults write -g com.apple.keyboard.fnState -bool true
+
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Speling Autocorrect
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
 
 ###############################################################################
 # Screen Saver                                                                #
@@ -162,12 +180,21 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# Disable window animations and Get Info animations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# Expand the following File Info panes:
+# “General”, “Open with”, and “Sharing & Permissions”
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+        General -bool true \
+        OpenWith -bool true \
+        Privileges -bool true
 ###############################################################################
 # Dock & hot corners                                                          #
 ###############################################################################
 
-# Set the icon size of Dock items to 30 pixels
-defaults write com.apple.dock tilesize -int 50
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 36
 
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock "dashboard-in-overlay" -bool true
@@ -176,16 +203,43 @@ defaults write com.apple.dock "dashboard-in-overlay" -bool true
 defaults write com.apple.dock showhidden -bool true
 
 # Hot corners
-# Bottom right screen corner → Put Display to Sleep
-defaults write com.apple.dock wvous-br-corner -int 10
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+# Top right screen corner → Show Desktop
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+
+# Bottom right screen corner → Show Screen Saver
+defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool false
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 
+# Privacy: don’t send search queries to Apple
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+
 # Set Safari’s home page to nothing
-defaults write com.apple.Safari HomePage -string ""
+defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Hide Safari’s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
@@ -219,6 +273,17 @@ defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # Show all processes in Activity Monitor
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
+
+
+###############################################################################
+# Mac App Store                                                               #
+###############################################################################
+
+# Enable the WebKit Developer Tools in the Mac App Store
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
+# Enable Debug Menu in the Mac App Store
+defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
 # Login Items
