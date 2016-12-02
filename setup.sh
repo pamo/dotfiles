@@ -69,6 +69,7 @@ cask_packages=(
         dash
         dropbox
         fantastical
+	flux
         google-chrome
         hipchat
         iterm2-beta
@@ -79,6 +80,7 @@ cask_packages=(
         spotify
 )
 brew cask install ${cask_packages[@]}
+ln -s "$HOME/Dropbox/Documents" ~
 
 # Bash Config
 ./.bash-it/install.sh -s -n
