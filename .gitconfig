@@ -6,9 +6,11 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   whitespace = space-before-tab,indent-with-non-tab,trailing-space
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
 [user]
-	email = pamela.ocampo@gmail.com
-	name = Pamela Ocampo
+  email = pamela.ocampo@gmail.com
+  name = Pamela Ocampo
 [alias]
   amend = commit --amend
   ap = add -p
@@ -33,51 +35,51 @@
   type = cat-file -t
   undo = reset --soft HEAD^
 [color]
-    branch = auto
-    diff = auto
-    interactive = auto
-    pager = true
-    status = auto
-    ui = true
+  branch = auto
+  diff = auto
+  interactive = auto
+  pager = true
+  status = auto
+  ui = true
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = red
+  added = yellow
+  changed = green
+  untracked = red
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
-    log = true
+  log = true
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [push]
-	default = current
+  default = current
 [pull]
   default = simple
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
-    remote = origin
-    merge = refs/heads/master
+  remote = origin
+  merge = refs/heads/master
 # URL shorthands
 [url "git@github.com:"]
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-    insteadOf = "github:"
+  insteadOf = "github:"
 [url "git@gist.github.com:"]
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-    insteadOf = "gist:"
+  insteadOf = "gist:"
 [github]
   user = pamo
 [credential]
