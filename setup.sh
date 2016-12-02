@@ -15,6 +15,7 @@ ln -s "$(pwd)/.gitconfig" ~
 ln -s "$(pwd)/.gitignore" ~
 ln -s "$(pwd)/.gitattributes" ~
 ln -s "$(pwd)/.bash-it" ~
+ln -s "$(pwd)/.inputrc" ~
 
 # vim
 ln -s "$(pwd)/.vim" ~
