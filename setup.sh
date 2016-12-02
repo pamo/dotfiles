@@ -46,6 +46,7 @@ brew_packages=(
         gti
         htop-osx
         markdown
+        nodenv
         pkg-config
         rbenv
         rbenv-gemset
@@ -90,4 +91,6 @@ ln -s "$HOME/Dropbox/Documents" ~
 
 # Install iterm themes
 open iterm/*.itermcolors
+
+./node_config.sh
 exit 0
