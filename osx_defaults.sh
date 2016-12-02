@@ -39,14 +39,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
-# Menu bar: hide the Time Machine and User icons
-defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array \
-  "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-  "/System/Library/CoreServices/Menu Extras/User.menu" \
-
-# Run Time Machine backups on battery power
-defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower 0
-
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
@@ -57,9 +49,10 @@ defaults write com.apple.CrashReporter DialogType developer
 defaults write com.apple.universalaccess reduceTransparency -boolean true
 
 # Screenshots Default Location
-defaults write com.apple.screencapture location ~/Documents/Screenshots && \
-killall SystemUIServer
-
+LOCATION="$HOME/Documents/ScreenShots"
+mkdir $LOCATION
+echo "Setting screenshot location to ${LOCATION}"
+defaults write com.apple.screencapture location $LOCATION && killall SystemUIServer
 
 ###############################################################################
 # Trackpad, mouse, keyboard, and input                                        #
@@ -230,10 +223,10 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 echo 'Adding Login Items'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/1password.app", name:"1password", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Alfred 3.app", name:"Alfred", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Flux.app", name:"Flux", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Google Chrome.app", name:"Google Chrome", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Slack.app", name:"Slack", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Spectacle.app", name:"Spectacle", hidden:true}'
-osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
-osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Google Chrome.app", name:"Google Chrome", hidden:true}'
-
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
