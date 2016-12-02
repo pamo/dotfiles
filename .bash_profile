@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-export BASH_IT="/Users/loaner/dotfiles-dos/.bash-it"
+export BASH_IT="$HOME/.bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
