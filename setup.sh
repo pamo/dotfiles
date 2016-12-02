@@ -72,7 +72,7 @@ cask_packages=(
         dash
         dropbox
         fantastical
-	flux
+        flux
         google-chrome
         hipchat
         iterm2-beta
@@ -81,6 +81,7 @@ cask_packages=(
         slack
         spectacle
         spotify
+        tweetbot
 )
 brew cask install ${cask_packages[@]}
 ln -s "$HOME/Dropbox/Documents" ~
