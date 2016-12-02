@@ -58,15 +58,15 @@ defaults write com.apple.screencapture location $LOCATION && killall SystemUISer
 # Trackpad, mouse, keyboard, and input                                        #
 ###############################################################################
 
-# Don't automatically switch to a Space with open windows for and application when switching to it 
+# Don't automatically switch to a Space with open windows for and application when switching to it
 defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
 # Keyboard: Key Repeat
-defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write -g KeyRepeat -int 0.02
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean false
+defaults write -g KeyRepeat -int 0.2
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -87,6 +87,9 @@ defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+
+# Function keys
+defaults write -g com.apple.keyboard.fnState -bool true
 
 ###############################################################################
 # Screen Saver                                                                #
