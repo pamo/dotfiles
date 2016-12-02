@@ -178,3 +178,6 @@
 [submodule ".bash-it"]
 	path = .bash-it
 	url = git@github.com:pamo/bash-it.git
+[submodule ".vim/bundle/ag"]
+	path = .vim/bundle/ag
+	url = https://github.com/rking/ag.vim
