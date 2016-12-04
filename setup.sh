@@ -66,6 +66,7 @@ brew install ${brew_packages[@]}
 
 # apps
 cask_packages=(
+	adobe-photoshop-lightroom
         1password
         alfred
         alternote
@@ -78,11 +79,11 @@ cask_packages=(
         hipchat
         iterm2-beta
         lastfm
+        polymail
         screenhero
         slack
         spectacle
         spotify
-        tweetbot
 )
 brew cask install ${cask_packages[@]}
 ln -s "$HOME/Dropbox/Documents" ~
