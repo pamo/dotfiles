@@ -75,6 +75,7 @@ cask_packages=(
         dropbox
         fantastical
         flux
+	focus
         google-chrome
         hipchat
         iterm2-beta
