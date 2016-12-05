@@ -181,3 +181,24 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = https://github.com/rking/ag.vim
+[submodule ".vim/bundle/autoformat"]
+	path = .vim/bundle/autoformat
+	url = git@github.com:Chiel92/vim-autoformat.git
+[submodule ".vim/bundle/bracketed-paste"]
+	path = .vim/bundle/bracketed-paste
+	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
+[submodule ".vim/bundle/closer"]
+	path = .vim/bundle/closer
+	url = git@github.com:rstacruz/vim-closer.git
+[submodule ".vim/bundle/repeat"]
+	path = .vim/bundle/repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule ".vim/bundle/commentary"]
+	path = .vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/hyperstyle"]
+	path = .vim/bundle/hyperstyle
+	url = git@github.com:rstacruz/vim-hyperstyle.git
+[submodule ".vim/bundle/editorconfig"]
+	path = .vim/bundle/editorconfig
+	url = git@github.com:editorconfig/editorconfig-vim.git
