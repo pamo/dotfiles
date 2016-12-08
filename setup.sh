@@ -36,5 +36,8 @@ echo "Installing brew and brew cask packages..."
 # Install iterm themes
 open iterm/*.itermcolors
 
+# Custom Sounds
+cp -r "$(pwd)/Sounds/" ~/Library/Sounds/
+
 ./node_config.sh
 exit 0
