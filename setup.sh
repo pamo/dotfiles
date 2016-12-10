@@ -16,6 +16,7 @@ ln -s "$(pwd)/.gitignore" ~
 ln -s "$(pwd)/.gitattributes" ~
 ln -s "$(pwd)/.bash-it" ~
 ln -s "$(pwd)/.inputrc" ~
+ln -s "$(pwd)/.npmrc" ~
 ln -s "$(pwd)/.editorconfig" ~
 
 # vim
