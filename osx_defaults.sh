@@ -68,7 +68,7 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean true
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0.5
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
@@ -81,6 +81,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# Fast tracking speed
+defaults write -g com.apple.mouse.scaling 4.5
 # Trackpad: swipe between pages with three fingers
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
@@ -230,6 +232,7 @@ defaults write com.apple.dock minimize-to-application -bool false
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
 defaults write com.apple.dock persistent-apps -array
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
@@ -282,8 +285,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Enable the WebKit Developer Tools in the Mac App Store
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
-# Enable Debug Menu in the Mac App Store
+# Enable Debug Menu in the Mac App Store and Reminders app
 defaults write com.apple.appstore ShowDebugMenu -bool true
+defaults write com.apple.reminders RemindersDebugMenu -boolean true
 
 ###############################################################################
 # Login Items
