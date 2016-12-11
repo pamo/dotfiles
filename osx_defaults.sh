@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+osascript -e 'tell application "System Preferences" to quit'
+
 # Ask for the administrator password upfront and run a keep-alive to update
 # existing `sudo` time stamp until script has finished
 sudo -v
@@ -99,8 +101,9 @@ echo "Enable press-and-hold for keys and disable key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
 echo ""
-echo " Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 0
+echo " macOS: Set a blazingly fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 40
 
 echo ""
 echo "Automatically illuminate built-in MacBook keyboard in low light"
@@ -243,8 +246,8 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock & hot corners                                                          #
 ###############################################################################
 
-echo "Automatically hide and show the Dock."
-defaults write com.apple.dock autohide -bool true
+echo "Disable Automatically hide and show the Dock."
+defaults write com.apple.dock autohide -bool false
 
 echo ""
 echo "Set the icon size of Dock items"
@@ -359,6 +362,8 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
+echo "Disabling Gatekeeper settings for Apps"
+sudo spctl --master-disable
 
 echo ""
 echo "Enable the WebKit Developer Tools in the Mac App Store"
