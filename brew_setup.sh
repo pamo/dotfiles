@@ -60,6 +60,7 @@ cask_packages=(
         qlimagesize
         qlmarkdown
         quicklook-json
+        rescuetime
         screenhero
         slack
         spectacle
