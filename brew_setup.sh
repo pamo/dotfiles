@@ -39,7 +39,6 @@ brew install ${brew_packages[@]}
 # apps
 cask_packages=(
         1password
-        adobe-photoshop-lightroom
         alfred
         alternote
         appcleaner
