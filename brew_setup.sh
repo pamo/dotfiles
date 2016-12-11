@@ -69,8 +69,7 @@ cask_packages=(
         vlc
         webpquicklook
 )
-brew cask install ${cask_packages[@]}
-
+brew cask install --force --appdir="/Applications" ${cask_packages[@]}
 ln -s "$HOME/Dropbox/Documents" ~
 rbenv init
 nodenv init
