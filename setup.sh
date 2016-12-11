@@ -10,35 +10,32 @@ echo "Setting OSX Defaults..."
 ./osx_defaults.sh
 
 mkdir ~/.tmp
-ln -s "$(pwd)/.bash_profile" ~
-ln -s "$(pwd)/.gitconfig" ~
-ln -s "$(pwd)/.gitignore" ~
-ln -s "$(pwd)/.gitattributes" ~
-ln -s "$(pwd)/.bash-it" ~
-ln -s "$(pwd)/.inputrc" ~
-ln -s "$(pwd)/.npmrc" ~
-ln -s "$(pwd)/.editorconfig" ~
+ln -sfn "$(pwd)/.bash_profile" ~
+ln -sfn "$(pwd)/.gitconfig" ~
+ln -sfn "$(pwd)/.gitignore" ~
+ln -sfn "$(pwd)/.gitattributes" ~
+ln -sfn "$(pwd)/.bash-it" ~
+ln -sfn "$(pwd)/.inputrc" ~
+ln -sfn "$(pwd)/.npmrc" ~
+ln -sfn "$(pwd)/.editorconfig" ~
 
 # vim
-ln -s "$(pwd)/.vim" ~
-ln -s "$(pwd)/.vim/.vimrc" ~
+ln -sfn "$(pwd)/.vim" ~
+ln -sfn "$(pwd)/.vim/.vimrc" ~
 mkdir ~/.vim/tmp
 
 git submodule init
-git submodule update
+git submodule update --remote --rebase
 
 echo "Installing brew and brew cask packages..."
 ./brew_setup.sh
 
 # Bash Config
+echo "Configuring bash-it"
 ./.bash-it/install.sh -s -n
 ./.bash-it/configure.sh
-
-# Install iterm themes
-open iterm/*.itermcolors
 
 # Custom Sounds
 cp -r "$(pwd)/Sounds/" ~/Library/Sounds/
 
-./node_config.sh
 exit 0

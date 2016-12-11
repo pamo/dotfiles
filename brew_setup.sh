@@ -69,11 +69,10 @@ cask_packages=(
         vlc
         webpquicklook
 )
-brew cask install --force --appdir="/Applications" ${cask_packages[@]}
-ln -s "$HOME/Dropbox/Documents" ~
-rbenv init
-nodenv init
 
+brew cask install --force --appdir="/Applications" ${cask_packages[@]}
+
+ln -sfn "$HOME/Dropbox/Documents" $HOME/Documents
 # Install fonts
 brew tap caskroom/fonts
 
@@ -89,3 +88,9 @@ echo "Installing fonts..."
 brew cask install --force ${fonts[@]}
 
 brew cleanup
+
+echo "Initializing rbenv"
+rbenv init
+
+echo "Initializing nodenv"
+nodenv init
