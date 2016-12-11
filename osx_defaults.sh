@@ -78,6 +78,10 @@ mkdir $LOCATION
 echo "Setting screenshot location to ${LOCATION}"
 defaults write com.apple.screencapture location $LOCATION && killall SystemUIServer
 
+echo ""
+echo "Disable Photos.app from starting everytime a device is plugged in"
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 ###############################################################################
 # Trackpad, mouse, keyboard, and input                                        #
 ###############################################################################
@@ -108,13 +112,14 @@ defaults write com.apple.BezelServices kDimTime -int 300
 
 echo ""
 echo "Trackpad: enable tap to click for this user and for the login screen"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true &&
+           defaults write -g com.apple.mouse.tapBehavior -int 1 &&
+           defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 
 echo ""
-echo "Fast mouse tracking speed"
-defaults write -g com.apple.mouse.scaling 4.5
+echo "Fast mouse and trackpad speed"
+defaults write -g com.apple.mouse.scaling -float 5
+defaults write -g com.apple.trackpad.scaling -int 5
 
 echo ""
 echo "Trackpad: swipe between pages with three fingers"
@@ -293,7 +298,8 @@ echo ""
 echo "Wipe all (default) app icons from the Dock"
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-defaults write com.apple.dock persistent-apps; killall Dock
+defaults write com.apple.dock "persistent-apps" {} &&
+  defaults write com.apple.dock "persistent-others" {}; killall Dock
 
 ###############################################################################
 # Safari & WebKit                                                             #
