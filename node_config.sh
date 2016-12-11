@@ -8,4 +8,4 @@ echo "Installing npm updates"
 npm install -g npm-check-updates
 
 echo "Installing yarn"
-npm install -g yarnpkg
+npm install -g yarn
