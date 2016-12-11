@@ -73,7 +73,8 @@ cask_packages=(
 
 brew cask install --force --appdir="/Applications" ${cask_packages[@]}
 
-ln -sfn "$HOME/Dropbox/Documents" $HOME/Documents
+rm -rf "$HOME/Documents"
+ln -sfn "$HOME/Dropbox/Documents" $HOME
 # Install fonts
 brew tap caskroom/fonts
 
