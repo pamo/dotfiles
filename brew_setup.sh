@@ -87,3 +87,5 @@ fonts=(
 
 echo "Installing fonts..."
 brew cask install --force ${fonts[@]}
+
+brew cleanup

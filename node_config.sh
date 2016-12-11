@@ -3,3 +3,9 @@ LTS=6.9.1
 nodenv install $LTS
 nodenv global $LTS
 nodenv rehash
+
+echo "Installing npm updates"
+npm install -g npm-check-updates
+
+echo "Installing yarn"
+npm install -g yarnpkg
