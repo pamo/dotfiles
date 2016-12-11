@@ -70,4 +70,7 @@ cask_packages=(
         webpquicklook
 )
 brew cask install ${cask_packages[@]}
+
 ln -s "$HOME/Dropbox/Documents" ~
+rbenv init
+nodenv init
