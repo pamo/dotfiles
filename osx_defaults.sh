@@ -246,6 +246,11 @@ echo "Set the icon size of Dock items"
 defaults write com.apple.dock tilesize -int 36
 
 echo ""
+echo "Turn on magnification for dock icons"
+defaults write com.apple.dock largesize -int 96
+defaults write com.apple.dock magnification -int 1
+
+echo ""
 echo "Don’t show Dashboard as a Space"
 defaults write com.apple.dock "dashboard-in-overlay" -bool true
 
