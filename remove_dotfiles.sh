@@ -42,6 +42,7 @@ cask_packages=(
         flux
         focus
         google-chrome
+        google-chrome-canary
         hipchat
         iterm2-beta
         lastfm
