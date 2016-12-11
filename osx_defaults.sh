@@ -238,6 +238,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock & hot corners                                                          #
 ###############################################################################
 
+echo "Automatically hide and show the Dock."
+defaults write com.apple.dock autohide -bool true
+
 echo ""
 echo "Set the icon size of Dock items"
 defaults write com.apple.dock tilesize -int 36
@@ -249,6 +252,9 @@ defaults write com.apple.dock "dashboard-in-overlay" -bool true
 echo ""
 echo "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
+
+echo "Show indicator lights for open applications in the Dock"
+defaults write com.apple.dock show-process-indicators -bool true
 
 echo ""
 echo "Hot corners"
@@ -276,13 +282,13 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 
 echo ""
 echo "Minimize windows into their application’s icon"
-defaults write com.apple.dock minimize-to-application -bool false
+defaults write com.apple.dock minimize-to-application -bool true
 
 echo ""
 echo "Wipe all (default) app icons from the Dock"
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps; killall Dock
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -338,7 +344,6 @@ defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 echo ""
 echo "Show all processes in Activity Monitor"
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
-
 
 ###############################################################################
 # Mac App Store                                                               #
