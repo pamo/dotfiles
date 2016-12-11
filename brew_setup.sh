@@ -73,3 +73,17 @@ brew cask install --force --appdir="/Applications" ${cask_packages[@]}
 ln -s "$HOME/Dropbox/Documents" ~
 rbenv init
 nodenv init
+
+# Install fonts
+brew tap caskroom/fonts
+
+fonts=(
+  font-clear-sans
+  font-roboto
+  font-source-code-pro
+  font-inconsolata
+  font-hack
+)
+
+echo "Installing fonts..."
+brew cask install --force ${fonts[@]}
