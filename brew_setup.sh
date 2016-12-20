@@ -21,6 +21,7 @@ brew_packages=(
         markdown
         nodenv
         pkg-config
+        python
         rbenv
         rbenv-gemset
         readline
@@ -31,7 +32,7 @@ brew_packages=(
         tree
         trash
         unrar
-        vim
+        vim --with-override-system-vi
         wget
 )
 brew install ${brew_packages[@]}
