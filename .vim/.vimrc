@@ -37,11 +37,11 @@ set autoread                " update files changed outside of vim
 set clipboard=unnamed       " yank and paste with system clipboard
 
 set tabstop=2               " tab spacing
-set softtabstop=2           " unify
 set shiftwidth=2            " indent/outdent by 4 cols
 set shiftround              " always indent/outdent to the nearest tab stop
 set expandtab               " use spaces instead of tabs
-set smarttab                " use tabs at the start of a line, spaces elsewhere
+retab
+
 set list                    " show trailing white space
 set listchars=tab:▸\ ,trail:▫
 
