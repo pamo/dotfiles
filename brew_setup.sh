@@ -8,68 +8,68 @@ brew tap caskroom/versions
 brew tap caskroom/fonts
 
 brew_packages=(
-        autoconf
-        autojump
-        bash-completion
-        dos2unix
-        findutils
-        git
-        git-extras
-        gti
-        grip
-        htop-osx
-        markdown
-        nodenv
-        pkg-config
-        python
-        rbenv
-        rbenv-gemset
-        readline
-        ruby-build
-        ssh-copy-id
-        the_silver_searcher
-        tig
-        tree
-        trash
-        unrar
-        vim --with-override-system-vi
-        wget
+  autoconf
+  autojump
+  bash-completion
+  dos2unix
+  findutils
+  git
+  git-extras
+  gti
+  grip
+  htop-osx
+  markdown
+  nodenv
+  pkg-config
+  python
+  rbenv
+  rbenv-gemset
+  readline
+  ruby-build
+  ssh-copy-id
+  the_silver_searcher
+  tig
+  tree
+  trash
+  unrar
+  vim --with-override-system-vi
+  wget
 )
 brew install ${brew_packages[@]}
 
 # apps
 cask_packages=(
-        1password
-        alfred
-        alternote
-        appcleaner
-        bartender
-        betterzipql
-        cleanmymac
-        dash
-        dropbox
-        fantastical
-        flux
-        focus
-        google-chrome
-        google-chrome-canary
-        hipchat
-        iterm2-beta
-        lastfm
-        polymail
-        qlcolorcode
-        qlimagesize
-        qlmarkdown
-        quicklook-json
-        rescuetime
-        screenhero
-        slack
-        spectacle
-        spotify
-        suspicious-package
-        transmission
-        vlc
-        webpquicklook
+  1password
+  alfred
+  alternote
+  appcleaner
+  bartender
+  betterzipql
+  cleanmymac
+  dash
+  dropbox
+  fantastical
+  flux
+  focus
+  google-chrome
+  google-chrome-canary
+  hipchat
+  iterm2-beta
+  lastfm
+  polymail
+  qlcolorcode
+  qlimagesize
+  qlmarkdown
+  quicklook-json
+  rescuetime
+  screenhero
+  slack
+  spectacle
+  spotify
+  suspicious-package
+  transmission
+  vlc
+  webpquicklook
 )
 
 brew cask install --force --appdir="/Applications" ${cask_packages[@]}
