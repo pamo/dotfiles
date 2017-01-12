@@ -6,21 +6,21 @@ filetype plugin indent on
 call pathogen#infect()
 
 set directory=~/.vim/tmp
-set paste
-set clipboard+=unnamed
 
 set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night-Eighties
+if has('gui_running')
+  set guifont=Hack:h12
+endif
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
 autocmd BufRead,BufNewFile *.md set spell
 
-set pastetoggle=<F2>
 set number
-set nowrap
-set backspace=indent,eol,start	" backspace over everything in insert mode
+set wrap
+set backspace=indent,eol,start  " backspace over everything in insert mode
 set nobackup
 set nowritebackup
 set autoindent
@@ -34,12 +34,18 @@ set smartcase
 set incsearch               " but do highlight as you type search phrase
 
 set autoread                " update files changed outside of vim
+set nopaste
 set clipboard=unnamed       " yank and paste with system clipboard
+set pastetoggle=<F2>
 
-set tabstop=2               " tab spacing
-set shiftwidth=2            " indent/outdent by 4 cols
-set shiftround              " always indent/outdent to the nearest tab stop
-set expandtab               " use spaces instead of tabs
+set tabstop=2       " The width of a TAB is set to 2.
+                    " Still it is a \t. It is just that
+                    " Vim will interpret it to be having
+                    " a width of 2.
+
+set shiftwidth=2    " Indents will have a width of 2
+set softtabstop=2   " Sets the number of columns for a TAB
+set expandtab       " Expand TABs to spaces
 retab
 
 set list                    " show trailing white space
@@ -48,7 +54,7 @@ set listchars=tab:▸\ ,trail:▫
 " Fold Defaults
 set foldmethod=indent
 set foldnestmax=10
-set foldlevel=1
+set foldlevel=2
 
 set visualbell
 set noerrorbells

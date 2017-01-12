@@ -17,6 +17,7 @@ ln -sfn "$(pwd)/.gitignore" ~
 ln -sfn "$(pwd)/.gitattributes" ~
 ln -sfn "$(pwd)/.bash-it" ~
 ln -sfn "$(pwd)/.inputrc" ~
+ln -sfn "$(pwd)/.gemrc" ~
 ln -sfn "$(pwd)/.npmrc" ~
 ln -sfn "$(pwd)/.editorconfig" ~
 
