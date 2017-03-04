@@ -10,3 +10,6 @@ npm install -g npm-check-updates
 
 echo "Installing yarn"
 npm install -g yarn
+
+echo "Installing yarn"
+yarn global add gist-cli
