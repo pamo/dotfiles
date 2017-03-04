@@ -15,8 +15,9 @@ if has('gui_running')
 endif
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
-set spelllang=en_us,es_es
+set spelllang=en_us
 autocmd BufRead,BufNewFile *.md set spell
+set nospell
 
 set number
 set wrap
@@ -38,14 +39,10 @@ set nopaste
 set clipboard=unnamed       " yank and paste with system clipboard
 set pastetoggle=<F2>
 
-set tabstop=2       " The width of a TAB is set to 2.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 2.
-
-set shiftwidth=2    " Indents will have a width of 2
-set softtabstop=2   " Sets the number of columns for a TAB
-set expandtab       " Expand TABs to spaces
+set tabstop=2               " tab spacing
+set shiftwidth=2            " indent/outdent by 4 cols
+set expandtab               " use spaces instead of tabs
+set smarttab
 retab
 
 set list                    " show trailing white space
