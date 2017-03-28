@@ -11,13 +11,12 @@ set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night-Eighties
 if has('gui_running')
-  set guifont=Hack:h12
+  set guifont=Input Mono:h12
 endif
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
-set spelllang=en_us
+set spelllang=en_us,es_es
 autocmd BufRead,BufNewFile *.md set spell
-set nospell
 
 set number
 set wrap
@@ -39,11 +38,12 @@ set nopaste
 set clipboard=unnamed       " yank and paste with system clipboard
 set pastetoggle=<F2>
 
-set tabstop=2               " tab spacing
-set shiftwidth=2            " indent/outdent by 4 cols
-set expandtab               " use spaces instead of tabs
-set smarttab
-retab
+set tabstop=2       " The width of a TAB is set to 2.
+set shiftwidth=2    " Indents will have a width of 2
+set softtabstop=2   " Sets the number of columns for a TAB
+set smartindent
+set autoindent
+set expandtab       " Expand TABs to spaces
 
 set list                    " show trailing white space
 set listchars=tab:▸\ ,trail:▫
@@ -105,7 +105,7 @@ autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l"
+nnoremap <C-l> <C-w>l
 
 " <Leader>r -- Cycle through relativenumber + number, number (only), and no
 " numbering (mnemonic: relative).
