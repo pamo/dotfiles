@@ -202,3 +202,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/coffee-script"]
+	path = .vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
