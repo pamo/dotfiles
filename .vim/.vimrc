@@ -18,12 +18,17 @@ let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
 autocmd BufRead,BufNewFile *.md set spell
 
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set autoindent
+
 set number
 set wrap
 set backspace=indent,eol,start  " backspace over everything in insert mode
 set nobackup
 set nowritebackup
-set autoindent
 set history=50
 
 set ruler                   " show the cursor position at all times
@@ -34,14 +39,8 @@ set smartcase
 set incsearch               " but do highlight as you type search phrase
 
 set autoread                " update files changed outside of vim
-set nopaste
 set clipboard=unnamed       " yank and paste with system clipboard
 set pastetoggle=<F2>
-
-set tabstop=2       " The width of a TAB is set to 2.
-set shiftwidth=2    " The width of a column is set to 2
-set expandtab       " Expand TABs to spaces
-set autoindent
 
 set list                    " show trailing white space
 set listchars=tab:▸\ ,trail:▫
@@ -86,6 +85,10 @@ endif
 " Vim-Javascript
 let g:javascript_enable_domhtmlcss = 1
 let g:jsx_ext_required = 0
+
+" Vim-CoffeeScript
+let coffee_indent_keep_current = 1
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " Beautify / EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
