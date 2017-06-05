@@ -208,3 +208,6 @@
 [submodule ".vim/bundle/vim-js-arrow-function"]
 	path = .vim/bundle/vim-js-arrow-function
 	url = git@github.com:mvolkmann/vim-js-arrow-function.git
+[submodule ".vim/bundle/vim-markdown-preview"]
+	path = .vim/bundle/vim-markdown-preview
+	url = git@github.com:JamshedVesuna/vim-markdown-preview.git

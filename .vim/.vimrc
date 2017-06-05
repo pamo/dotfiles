@@ -130,4 +130,6 @@ runtime vimrc.d/mappings.vim
 runtime vimrc.d/syntastic.vim
 runtime vimrc.d/nerdtree.vim
 
+let vim_markdown_preview_github=1
+
 set runtimepath^=~/.vim/bundle/ag
