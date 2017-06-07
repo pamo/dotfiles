@@ -11,6 +11,7 @@ echo "Setting OSX Defaults..."
 
 mkdir ~/.tmp
 mkdir ~/Development
+ln -sfn "$(pwd -P)" ~/
 ln -sfn "$(pwd)/.bash_profile" ~
 ln -sfn "$(pwd)/.gitconfig" ~
 ln -sfn "$(pwd)/.gitignore" ~
