@@ -131,5 +131,6 @@ runtime vimrc.d/syntastic.vim
 runtime vimrc.d/nerdtree.vim
 
 let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
 
 set runtimepath^=~/.vim/bundle/ag
