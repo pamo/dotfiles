@@ -10,6 +10,8 @@ let g:syntastic_javascript_checkers = ['eslint', 'jsxhint']
 let g:syntastic_ruby_checkers = ['rubylint']
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_yaml_checkers = ['jsyaml']
+let g:syntastic_sass_checkers= ['sass_lint']
+let g:syntastic_scss_checkers= ['sass_lint']
 
 highlight SyntasticErrorLine guibg=#CB0900
 highlight SyntasticWarningLine guibg=#EBEF00
