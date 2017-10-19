@@ -15,8 +15,8 @@ brew_packages=(
   findutils
   git
   git-extras
-  gti
   grip
+  gti
   htop-osx
   markdown
   nodenv
@@ -25,12 +25,13 @@ brew_packages=(
   rbenv
   rbenv-gemset
   readline
+  ripgrep
   ruby-build
   ssh-copy-id
   the_silver_searcher
   tig
-  tree
   trash
+  tree
   unrar
   vim --with-override-system-vi
   wget
