@@ -1,58 +1,13 @@
 set nocp
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
 call pathogen#infect()
-
-set directory=~/.vim/tmp
-
-set t_Co=256
-set background=dark
-colorscheme Tomorrow-Night-Eighties
-if has('gui_running')
-  set guifont=Input Mono:h12
-endif
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
 autocmd BufRead,BufNewFile *.md set spell
 
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
-set autoindent
-
-set number
-set wrap
-set backspace=indent,eol,start  " backspace over everything in insert mode
-set nobackup
-set nowritebackup
-set history=50
-
-set ruler                   " show the cursor position at all times
-set showcmd                 " display incomplete commands
-set nohlsearch              " don't highlight searched phrases
-set ignorecase              " case-insensitive search
-set smartcase
-set incsearch               " but do highlight as you type search phrase
-
-set autoread                " update files changed outside of vim
-set clipboard=unnamed       " yank and paste with system clipboard
-set pastetoggle=<F2>
-
-set list                    " show trailing white space
-set listchars=tab:▸\ ,trail:▫
-
-" Fold Defaults
-set foldmethod=indent
-set foldnestmax=10
-set foldlevel=2
-
-set visualbell
-set noerrorbells
-set noswapfile
 " Disable help menu
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -123,14 +78,14 @@ if has("autocmd")
         \| exe "normal! g'\"" | endif
 endif
 
+runtime vimrc.d/general-options.vim
 runtime vimrc.d/airline.vim
 runtime vimrc.d/auto-commands.vim
 runtime vimrc.d/ctrlp.vim
 runtime vimrc.d/mappings.vim
 runtime vimrc.d/syntastic.vim
 runtime vimrc.d/nerdtree.vim
+runtime vimrc.d/prettier.vim
 
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
-
-set runtimepath^=~/.vim/bundle/ag
