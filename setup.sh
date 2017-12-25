@@ -28,7 +28,7 @@ ln -sfn "$(pwd)/.vim/.vimrc" ~
 mkdir ~/.vim/tmp
 
 # vscode
-ln -sfn "$(pwd)/Code" /Users/pocampo/Library/Application\ Support/
+ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
 
 git submodule init
 git submodule update --remote --rebase
