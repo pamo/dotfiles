@@ -1,4 +1,3 @@
-set nocp
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 filetype plugin indent on
@@ -71,7 +70,7 @@ nnoremap <silent> <Leader>r :call mappings#cycle_numbering()<CR>
 " As this one is somewhat destructive and relatively close to the
 " oft-used <leader>a mapping, make this one a double key-stroke.
 nnoremap <silent> <Leader>zz :call mappings#zap()<CR>
-:au FocusLost * :wa " Autosave but warn of untitled buffers
+augroup FocusLost * :wa " Autosave but warn of untitled buffers
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
