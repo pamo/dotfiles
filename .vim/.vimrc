@@ -1,7 +1,6 @@
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 filetype plugin indent on
-call pathogen#infect()
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
@@ -26,8 +25,8 @@ map <F7> mzgg=G`z " re-indent file
 noremap <F8> :Autoformat<CR>
 
 " Move cursor down a single row
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -85,6 +84,7 @@ runtime vimrc.d/mappings.vim
 runtime vimrc.d/syntastic.vim
 runtime vimrc.d/nerdtree.vim
 runtime vimrc.d/prettier.vim
+packadd! matchit
 
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
