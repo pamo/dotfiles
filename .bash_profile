@@ -29,7 +29,7 @@ export SCM_CHECK=true
 # Set Xterm/screen/Tmux title with only a short hostname.
 # Unomment this (or set SHORT_HOSTNAME to something else),
 # Will otherwise fall back on $HOSTNAME.
-#export SHORT_HOSTNAME=$(hostname -s)
+export SHORT_HOSTNAME=$(hostname -s)
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/djl/vcprompt
@@ -41,3 +41,4 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
