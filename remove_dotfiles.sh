@@ -46,7 +46,6 @@ cask_packages=(
         hipchat
         iterm2-beta
         lastfm
-        polymail
         qlcolorcode
         qlimagesize
         qlmarkdown
