@@ -2,7 +2,6 @@ if [[ ! -x /usr/local/bin/brew ]] ; then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap homebrew/versions
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
@@ -63,7 +62,6 @@ cask_packages=(
   qlmarkdown
   quicklook-json
   rescuetime
-  screenhero
   slack
   spectacle
   spotify
