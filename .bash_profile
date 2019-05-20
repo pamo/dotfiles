@@ -5,7 +5,7 @@ export BASH_IT="$HOME/.bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='clean'
+export BASH_IT_THEME='minimal'
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -44,3 +44,5 @@ source $BASH_IT/bash_it.sh
 
 export PATH="/usr/local/opt/libxslt/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH=$HOME/.nodenv/versions/10.4.0/bin:$PATH
+
