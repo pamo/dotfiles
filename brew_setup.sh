@@ -2,9 +2,8 @@ if [[ ! -x /usr/local/bin/brew ]] ; then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
 brew_packages=(
   autoconf
