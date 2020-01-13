@@ -30,7 +30,7 @@ brew_packages=(
   trash
   tree
   unrar
-  vim --with-override-system-vi
+  vim
   wget
 )
 brew install ${brew_packages[@]}
