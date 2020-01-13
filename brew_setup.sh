@@ -54,6 +54,7 @@ cask_packages=(
   spectacle
   spotify
   webpquicklook
+  visual-studio-code
 )
 
 brew cask install --force --appdir="/Applications" ${cask_packages[@]}
