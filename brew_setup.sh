@@ -10,6 +10,7 @@ brew_packages=(
   autoconf
   autojump
   bash-completion
+  chruby
   dos2unix
   findutils
   git
@@ -21,13 +22,10 @@ brew_packages=(
   nodenv
   pkg-config
   python
-  rbenv
-  rbenv-gemset
   readline
   ripgrep
   ruby-build
   ssh-copy-id
-  the_silver_searcher
   tig
   trash
   tree
@@ -41,33 +39,20 @@ brew install ${brew_packages[@]}
 cask_packages=(
   1password
   alfred
-  alternote
-  appcleaner
-  bartender
-  betterzipql
-  cleanmymac
   dash
   dropbox
   fantastical
-  flux
-  focus
   google-chrome
-  google-chrome-canary
-  hipchat
   iterm2-beta
   lastfm
-  polymail
   qlcolorcode
   qlimagesize
   qlmarkdown
   quicklook-json
   rescuetime
-  slack
+  station
   spectacle
   spotify
-  suspicious-package
-  transmission
-  vlc
   webpquicklook
 )
 
@@ -79,20 +64,13 @@ ln -sfn "$HOME/Dropbox/Documents" $HOME
 brew tap caskroom/fonts
 
 fonts=(
-  font-clear-sans
-  font-roboto
-  font-source-code-pro
-  font-inconsolata
-  font-hack
+  font-fira-code
 )
 
 echo "Installing fonts..."
 brew cask install --force ${fonts[@]}
 
 brew cleanup
-
-echo "Initializing rbenv"
-rbenv init
 
 echo "Initializing nodenv"
 nodenv init
