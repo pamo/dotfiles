@@ -25,6 +25,9 @@ fi
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+echo ""
+echo "Dark mode"
+defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 echo ""
 echo "Menu bar: show battery percentage"
