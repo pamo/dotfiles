@@ -44,6 +44,8 @@ cask_packages=(
   1password
   alfred
   dash
+  docker
+  dockstation
   dropbox
   fantastical
   google-chrome
