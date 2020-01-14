@@ -17,6 +17,7 @@ brew_packages=(
   grip
   gti
   htop-osx
+  keepingyouawake
   markdown
   mysql
   nodenv
