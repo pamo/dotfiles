@@ -20,11 +20,13 @@ brew_packages=(
   markdown
   mysql
   nodenv
+  node-build
   pkg-config
   python
   readline
   ripgrep
   ruby-build
+  ruby-install
   ssh-copy-id
   tig
   trash
