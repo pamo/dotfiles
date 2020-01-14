@@ -57,11 +57,13 @@ cask_packages=(
   qlmarkdown
   quicklook-json
   rescuetime
+  sequel-pro
   station
   spectacle
   spotify
   webpquicklook
   visual-studio-code
+  viscosity
 )
 
 brew cask install --force --appdir="/Applications" ${cask_packages[@]}
