@@ -1,5 +1,8 @@
 {
-  "editor.fontFamily": "'Input Mono', 'Hack', 'Courier New', monospace",
+  "sync.gist": "71f2d29cab091d1001315408d6c2a438",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -15,16 +18,12 @@
   "eslint.autoFixOnSave": true,
   "eslint.run": "onSave",
   "html.format.wrapAttributes": "force-aligned",
-  "javascript.format.enable": false,
-  "prettier.eslintIntegration": true,
-  "prettier.printWidth": 100,
-  "prettier.trailingComma": "es5",
-  "search.useIgnoreFilesByDefault": true,
-  "tslint.autoFixOnSave": true,
-  "vim.cmdLineInitialColon": true,
-  "vim.disableAnnoyingNeovimMessage": true,
+  "javascript.format.enable": true,
+  "explorer.openEditors.visible": 0,
+  "editor.cursorBlinking": "phase",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.colorTheme": "Tomorrow_Night_Eighties",
   "search.exclude": {
     "**/*.map": true,
     "**/.DS_Store": true,
@@ -34,15 +33,175 @@
     "**/tmp": true,
     "public/**": true
   },
+  "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.25,
   "emmet.triggerExpansionOnTab": true,
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": true,
+  "vim.easymotion": true,
   "vim.statusBarColorControl": true,
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "files.trimTrailingWhitespace": false
   },
-  "workbench.panel.location": "bottom"
+  "window.zoomLevel": -1,
+  "explorer.confirmDelete": false,
+  "scss.validate": true,
+  "css.validate": true,
+  "editor.tabSize": 2,
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.colorTheme": "fairyfloss",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#005f5f",
+    "titleBar.inactiveBackground": "#005f5f99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "activityBar.background": "#009292",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff9fff",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#009292",
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.implicitProjectConfig.checkJs": true,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.settings.mode": "advanced",
+  "gitlens.menus": {
+    "editor": {
+      "blame": true,
+      "clipboard": true,
+      "compare": true,
+      "details": true,
+      "history": true,
+      "remote": true
+    },
+    "editorGroup": {
+      "blame": true,
+      "compare": true,
+      "history": false,
+      "remote": true
+    },
+    "editorTab": {
+      "compare": false,
+      "history": false,
+      "remote": true
+    },
+    "explorer": {
+      "compare": true,
+      "history": true,
+      "remote": true
+    }
+  },
+  "gitlens.statusBar.reduceFlicker": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.substituteGlobalFlag": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
+    },
+    {
+      "before": [
+        ":"
+      ],
+      "commands": [
+        {
+          "command": "workbench.action.showCommands"
+        }
+      ]
+    }
+  ],
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "gitlens.views.repositories.location": "scm",
+  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.compare.location": "scm",
+  "gitlens.views.search.location": "scm",
+  "editor.snippetSuggestions": "top",
+  "polacode.transparentBackground": true,
+  "files.autoSaveDelay": 750,
+  "liveshare.featureSet": "stable",
+  "terminal.integrated.rendererType": "dom",
+  "gitlens.codeLens.scopes": [
+    "containers"
+  ],
+  "gitlens.statusBar.alignment": "left",
+  "angularConsole.useNVM": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.color": "#42a5f5"
 }
