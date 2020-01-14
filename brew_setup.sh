@@ -3,6 +3,7 @@ if [[ ! -x /usr/local/bin/brew ]] ; then
 fi
 
 brew tap homebrew/cask-versions
+brew tap homebrew/cask-drivers
 brew tap homebrew/cask-fonts
 
 brew_packages=(
@@ -47,6 +48,7 @@ cask_packages=(
   fantastical
   google-chrome
   iterm2-beta
+  logitech-options
   lastfm
   qlcolorcode
   qlimagesize
@@ -64,8 +66,6 @@ brew cask install --force --appdir="/Applications" ${cask_packages[@]}
 
 rm -rf "$HOME/Documents"
 ln -sfn "$HOME/Dropbox/Documents" $HOME
-# Install fonts
-brew tap caskroom/fonts
 
 fonts=(
   font-fira-code
