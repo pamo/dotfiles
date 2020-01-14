@@ -18,6 +18,7 @@ brew_packages=(
   gti
   htop-osx
   markdown
+  mysql
   nodenv
   pkg-config
   python
