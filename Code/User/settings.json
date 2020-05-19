@@ -203,5 +203,8 @@
   "gitlens.statusBar.alignment": "left",
   "angularConsole.useNVM": false,
   "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.folders.color": "#42a5f5"
+  "material-icon-theme.folders.color": "#42a5f5",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

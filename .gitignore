@@ -28,15 +28,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .gist-auth
-Code/CachedData/
-Code/logs/
-Code/CachedExtensions/
-Code/Backups/
-Code/machineid
-Code/Local Storage/
-Code/storage.json
-Code/Preferences
-Code/GPUCache/
-Code/Cache
-Code/Cookies
-Code/Cookies-journal
+Code/**/*
+!Code/**/*settings.json)
