@@ -112,9 +112,6 @@
 [submodule ".vim/bundle/javascript"]
 	path = .vim/bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule ".bash_it"]
-	path = .bash_it
-	url = https://github.com/pamo/bash-it.git 
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
 	url = git@github.com:tpope/vim-pathogen.git
