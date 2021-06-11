@@ -19,7 +19,7 @@ ln -sfn "$(pwd)/.gitattributes" ~
 ln -sfn "$(pwd)/.inputrc" ~
 ln -sfn "$(pwd)/.gemrc" ~
 ln -sfn "$(pwd)/.npmrc" ~
-ln -sfn "$(pwd)/.editorconfig" ~
+ln -sfn "$(pwd)/.zshrc" ~
 
 # vim
 ln -sfn "$(pwd)/.vim" ~
@@ -37,5 +37,9 @@ echo "Installing brew and brew cask packages..."
 
 # Custom Sounds
 cp -r "$(pwd)/Sounds/" ~/Library/Sounds/
+
+echo "Installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -L git.io/antigen > antigen.zsh)"
 
 exit 0
