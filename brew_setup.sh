@@ -20,6 +20,7 @@ brew_packages=(
   htop-osx
   keepingyouawake
   markdown
+  mas
   mysql
   nodenv
   node-build
@@ -82,3 +83,6 @@ brew cleanup
 
 echo "Initializing nodenv"
 nodenv init
+
+echo "Installing giphy capture"
+mas install 668208984
