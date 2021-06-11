@@ -13,14 +13,12 @@ sudo chmod 755 /Library/Preferences
 echo ""
 echo "Would you like to set your computer name (System Preferences >> Sharing)?  (y/n)"
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  echo "What would you like it to be?"
-  read COMPUTER_NAME
-  sudo scutil --set ComputerName $COMPUTER_NAME
-  sudo scutil --set HostName $COMPUTER_NAME
-  sudo scutil --set LocalHostName $COMPUTER_NAME
-  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
-fi
+
+COMPUTER_NAME="pamo"
+sudo scutil --set ComputerName $COMPUTER_NAME
+sudo scutil --set HostName $COMPUTER_NAME
+sudo scutil --set LocalHostName $COMPUTER_NAME
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -45,6 +43,9 @@ echo ""
 echo "Expand print panel by default"
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool YES
 
+echo "Automatically quit printer app once the print jobs complete"
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
 echo ""
 echo "Save to disk (not to iCloud) by default"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool NO
@@ -58,10 +59,6 @@ echo "Disable the Time Machine new disk requests dialog"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 
 echo ""
-echo "Menu bar: disable transparency"
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool NO
-
-echo ""
 echo "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
@@ -73,9 +70,31 @@ echo ""
 echo "Setting Developer CrashReport dialog type"
 defaults write com.apple.CrashReporter DialogType developer
 
-echo ""
-echo "Reduce transparency"
-defaults write com.apple.universalaccess reduceTransparency -boolean YES
+echo " Automatically illuminate built-in MacBook keyboard in low light"
+defaults write com.apple.BezelServices kDim -bool true
+
+echo " Turn off keyboard illumination when computer is not used for 5 minutes"
+defaults write com.apple.BezelServices kDimTime -int 300
+
+echo " Show IP address, hostname, OS version when clicking the clock in the login window"
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+echo " Trackpad: enable tap to click for this user and for the login screen"
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+echo " Increase sound quality for Bluetooth headphones/headsets"
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+echo " Enable full keyboard access for all controls"
+echo " (e.g. enable Tab in modal dialogs)"
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+echo " Require password immediately after sleep or screen saver begins"
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 
 # Screenshots Default Location
 LOCATION="$HOME/Documents/ScreenShots"
@@ -170,6 +189,17 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool YES
 echo ""
 echo "Require password 5 minutes after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPasswordDelay -int 300
+
+echo " Enable snap-to-grid for icons on the desktop and in other icon views"
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+echo " Disable the warning before emptying the Trash"
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+echo " Empty Trash securely by default"
+defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 ###############################################################################
 # Finder                                                                      #
@@ -377,6 +407,12 @@ echo "Enable Debug Menu in the Mac App Store and Reminders app"
 defaults write com.apple.appstore ShowDebugMenu -bool YES
 defaults write com.apple.reminders RemindersDebugMenu -boolean YES
 
+
+echo "Disabling OS X Gate Keeper"
+sudo spctl --master-disable
+sudo defaults write /var/db/SystemPolicy-prefs.plist enabled -string no
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
 ###############################################################################
 # Login Items
 ###############################################################################
@@ -385,8 +421,10 @@ osascript -e 'tell application "System Events" to make new login item at end wit
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Alfred 3.app", name:"Alfred", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Bartender 2.app", name:"Bartender", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
-osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Flux.app", name:"Flux", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Google Chrome.app", name:"Google Chrome", hidden:true}'
-osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Slack.app", name:"Slack", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Spectacle.app", name:"Spectacle", hidden:true}'
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+
+echo " Enable SSH "
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
