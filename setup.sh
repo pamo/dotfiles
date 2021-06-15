@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Login to Gitub
+git credential-osxkeychain
+git config --global credential.helper osxkeychain
+git config --global user.name "Pamela Ocampo"
+git config --global user.email "pamela.ocampo@gmail.com"
 
 # Install Command Line Tools without Xcode
 xcode-select --install
@@ -25,6 +30,9 @@ ln -sfn "$(pwd)/.zshrc" ~
 ln -sfn "$(pwd)/.vim" ~
 ln -sfn "$(pwd)/.vim/.vimrc" ~
 mkdir ~/.vim/tmp
+echo "Installing pathogen"
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # vscode
 ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
