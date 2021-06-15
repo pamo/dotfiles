@@ -50,4 +50,7 @@ echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sh -c "$(curl -L git.io/antigen > antigen.zsh)"
 
+sudo chmod 755 /usr/local/share/zsh
+sudo chmod 755 /usr/local/share/zsh/functions
+
 exit 0
