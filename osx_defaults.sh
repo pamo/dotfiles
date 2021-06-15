@@ -10,9 +10,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Setting write permissions on /Library/Preferences"
 sudo chmod 755 /Library/Preferences
 
-echo ""
-echo "Would you like to set your computer name (System Preferences >> Sharing)?  (y/n)"
-read -r response
+# echo ""
+# echo "Would you like to set your computer name (System Preferences >> Sharing)?  (y/n)"
+# read -r response
 
 COMPUTER_NAME="pamo"
 sudo scutil --set ComputerName $COMPUTER_NAME
