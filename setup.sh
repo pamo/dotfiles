@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-# Login to Gitub
-git credential-osxkeychain
-git config --global credential.helper osxkeychain
-git config --global user.name "Pamela Ocampo"
-git config --global user.email "pamela.ocampo@gmail.com"
 
-# Install Command Line Tools without Xcode
+echo "Install Command Line Tools without Xcode"
 xcode-select --install
+
+echo "Check for github ssh keys"
+./git-login.sh
 
 echo "Checking for updates..."
 softwareupdate --install --all
@@ -16,6 +14,7 @@ echo "Setting OSX Defaults..."
 
 mkdir ~/.tmp
 mkdir ~/dev
+
 ln -sfn "$(pwd -P)" ~/
 ln -sfn "$(pwd)/.bash_profile" ~
 ln -sfn "$(pwd)/.gitconfig" ~
@@ -30,9 +29,10 @@ ln -sfn "$(pwd)/.zshrc" ~
 ln -sfn "$(pwd)/.vim" ~
 ln -sfn "$(pwd)/.vim/.vimrc" ~
 mkdir ~/.vim/tmp
+
 echo "Installing pathogen"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 echo "Installing brew and brew cask packages..."
 ./brew_setup.sh
