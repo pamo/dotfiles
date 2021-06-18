@@ -8,8 +8,3 @@ brew cleanup
 
 echo "Initializing nodenv"
 nodenv init
-
-echo "Link documents to dropbox"
-rm -rf "$HOME/Documents"
-ln -sfn "$HOME/Dropbox/Documents" $HOME
-

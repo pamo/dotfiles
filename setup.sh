@@ -34,14 +34,14 @@ echo "Installing pathogen"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+echo "Installing brew and brew cask packages..."
+./brew_setup.sh
+
 # vscode
 ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
 
 git submodule init
 git submodule update --remote --rebase
-
-echo "Installing brew and brew cask packages..."
-./brew_setup.sh
 
 # Custom Sounds
 cp -r "$(pwd)/Sounds/" ~/Library/Sounds/
@@ -52,5 +52,10 @@ sh -c "$(curl -L git.io/antigen > antigen.zsh)"
 
 sudo chmod 755 /usr/local/share/zsh
 sudo chmod 755 /usr/local/share/zsh/functions
+
+echo "Link documents to dropbox"
+cd $HOME
+rm -rf "Documents"
+ln -sfn "$HOME/Dropbox/Documents" $HOME
 
 exit 0
