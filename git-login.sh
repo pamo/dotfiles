@@ -15,7 +15,15 @@ done
 
 cd $dotfile_dir
 
-echo "$ssh_key_exists"
+echo "SSH KEY Exists: $ssh_key_exists"
+
 if [[ ! "$ssh_key_exists" ]]; then
   echo "Generating new ssh key..."
+  ssh-keygen -t ed25519 -C "pamela.ocampo@gmail.com"
+  echo "Starting ssh-agent"
+  eval "$(ssh-agent -s)"
+  echo "Copying over config file"
+  cp ssh-config ${HOME}/config
+  cat ${HOME}/.ssh/config
+  ssh-add -K ${HOME}/id_ed25519
 fi
