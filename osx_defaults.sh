@@ -10,15 +10,25 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Setting write permissions on /Library/Preferences"
 sudo chmod 755 /Library/Preferences
 
-# echo ""
-# echo "Would you like to set your computer name (System Preferences >> Sharing)?  (y/n)"
-# read -r response
+  echo ""
+  echo "Would you like to set your computer name (System Preferences >> Sharing)?  (y/n)"
+  read -r response
 
-COMPUTER_NAME="pamo"
-sudo scutil --set ComputerName $COMPUTER_NAME
-sudo scutil --set HostName $COMPUTER_NAME
-sudo scutil --set LocalHostName $COMPUTER_NAME
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+if [ "$response" = "y" ]; then
+  echo "What should the computer name be?"
+  read -r COMPUTER_NAME
+  # Bonjour name ending in .local
+  scutil --set LocalHostName $COMPUTER_NAME
+  # Friendly name shown in System Preferences > Sharing
+  scutil --set ComputerName $COMPUTER_NAME
+  # The name recognized by the hostname command
+  scutil --set HostName $COMPUTER_NAME
+fi
+
+# Save the computer's serial number in a variable so it can be used in the next command.
+serialNum=$(ioreg -l | awk '/IOPlatformSerialNumber/ { split($0, line, "\""); printf("%s\n", line[4]); }')
+echo "Set the NetBIOS name as the serial number"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $serialNum
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -138,8 +148,8 @@ defaults write com.apple.BezelServices kDimTime -int 300
 echo ""
 echo "Trackpad: enable tap to click for this user and for the login screen"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool YES &&
-           defaults write -g com.apple.mouse.tapBehavior -int 1 &&
-           defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+  defaults write -g com.apple.mouse.tapBehavior -int 1 &&
+  defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 
 echo ""
 echo "Fast mouse and trackpad speed"
@@ -271,9 +281,9 @@ echo ""
 echo "Expand the following File Info panes:"
 echo "“General”, “Open with”, and “Sharing & Permissions”"
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-        General -bool YES \
-        OpenWith -bool YES \
-        Privileges -bool YES
+  General -bool YES \
+  OpenWith -bool YES \
+  Privileges -bool YES
 
 ###############################################################################
 # Dock & hot corners                                                          #
