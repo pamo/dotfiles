@@ -24,6 +24,7 @@ ln -sfn "$(pwd)/.inputrc" ~
 ln -sfn "$(pwd)/.gemrc" ~
 ln -sfn "$(pwd)/.npmrc" ~
 ln -sfn "$(pwd)/.zshrc" ~
+ln -s "$(pwd)/.iterm" ~
 
 # vim
 ln -sfn "$(pwd)/.vim" ~
@@ -57,5 +58,10 @@ echo "Link documents to dropbox"
 cd $HOME
 rm -rf "Documents"
 ln -sfn "$HOME/Dropbox/Documents" $HOME
+
+
+echo "Manual steps:"
+echo "1 - Open iTerm2 preferences and check the Load Preferences checkbox pointing to ~/.iterm"
+echo "2 - Go to Profiles > Text and change the font to Fira Code"
 
 exit 0
