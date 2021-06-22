@@ -25,6 +25,7 @@ ln -sfn "$(pwd)/.gemrc" ~
 ln -sfn "$(pwd)/.npmrc" ~
 ln -sfn "$(pwd)/.zshrc" ~
 ln -s "$(pwd)/.iterm" ~
+ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
 
 # vim
 ln -sfn "$(pwd)/.vim" ~
