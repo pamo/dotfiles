@@ -100,4 +100,5 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="/usr/local/sbin:$PATH"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 source $ZSH/oh-my-zsh.sh
