@@ -13,6 +13,6 @@ export SHORT_HOSTNAME=$(hostname -s)
 
 export PATH="/usr/local/opt/libxslt/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH=$HOME/.nodenv/versions/10.4.0/bin:$PATH
+export GEM_HOME="$HOME/.gem"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
