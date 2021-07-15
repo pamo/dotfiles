@@ -6,5 +6,6 @@ fi
 brew bundle
 brew cleanup
 
-echo "Initializing nodenv"
-nodenv init
+echo "installing nodenv"
+nodenv install
+eval "$(nodenv init -)"
