@@ -3,7 +3,6 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
-  "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "prettier.singleQuote": true,
@@ -45,7 +44,6 @@
     "editor.wordWrap": "bounded",
     "files.trimTrailingWhitespace": false
   },
-  "window.zoomLevel": -1,
   "explorer.confirmDelete": false,
   "scss.validate": true,
   "css.validate": true,
@@ -182,7 +180,7 @@
   ],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
@@ -206,5 +204,28 @@
   "material-icon-theme.folders.color": "#42a5f5",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "sort-imports.default-sort-style": "",
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.requireConfig": true,
+  "files.autoSave": "onWindowChange",
+  "jest.autoEnable": false,
+  "jest.runAllTestsFirst": false,
+  "window.zoomLevel": -1,
+  "angular.experimental-ivy": true,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
 }

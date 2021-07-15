@@ -102,3 +102,6 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 source $ZSH/oh-my-zsh.sh
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
