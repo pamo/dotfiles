@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 
 # Formulae
 brew "imagemagick"
+brew "antigen"
 brew "autoconf"
 brew "autojump"
 brew "bash-completion"

@@ -70,7 +70,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv docker-compose common-aliases command-not-found colored-man-pages bundler aws autoenv autojump globalias)
+plugins=(git git-prune dotenv docker-compose common-aliases command-not-found colored-man-pages bundler aws autoenv autojump globalias)
 
 
 # User configuration
@@ -98,6 +98,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+eval "$(nodenv init -)"
 
 export PATH="/usr/local/sbin:$PATH"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -105,3 +106,4 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+source /usr/local/share/antigen/antigen.zsh
