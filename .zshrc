@@ -70,8 +70,22 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prune dotenv docker-compose common-aliases command-not-found colored-man-pages bundler aws autoenv autojump globalias)
+plugins=(git dotenv docker-compose common-aliases command-not-found colored-man-pages bundler aws autoenv autojump globalias)
 
+# Antigen Config
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle diazod/git-prune
+antigen theme edvardm
+
+# Tell Antigen that you're done.
+antigen apply
 
 # User configuration
 
