@@ -8,16 +8,11 @@
   "prettier.singleQuote": true,
   "typescript.npm": "/usr/local/bin/npm",
   "workbench.startupEditor": "none",
-  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.showFoldingControls": "always",
   "editor.wordWrap": "on",
-  "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.run": "onSave",
   "html.format.wrapAttributes": "force-aligned",
-  "javascript.format.enable": true,
   "explorer.openEditors.visible": 0,
   "editor.cursorBlinking": "phase",
   "editor.smoothScrolling": true,
@@ -48,7 +43,6 @@
   "scss.validate": true,
   "css.validate": true,
   "editor.tabSize": 2,
-  "workbench.statusBar.feedback.visible": false,
   "workbench.colorTheme": "fairyfloss",
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#005f5f",
@@ -66,11 +60,7 @@
     "statusBar.debuggingBackground": "#005f5f"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.implicitProjectConfig.checkJs": true,
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "gitlens.settings.mode": "advanced",
+  "js/ts.implicitProjectConfig.checkJs": true,
   "gitlens.menus": {
     "editor": {
       "blame": true,
@@ -100,7 +90,7 @@
   "gitlens.statusBar.reduceFlicker": true,
   "vim.foldfix": true,
   "vim.hlsearch": true,
-  "vim.substituteGlobalFlag": true,
+  "vim.gdefault": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -179,53 +169,36 @@
     }
   ],
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "crash",
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "gitlens.views.repositories.location": "scm",
-  "gitlens.views.fileHistory.location": "scm",
-  "gitlens.views.lineHistory.location": "scm",
-  "gitlens.views.compare.location": "scm",
-  "gitlens.views.search.location": "scm",
   "editor.snippetSuggestions": "top",
   "polacode.transparentBackground": true,
   "files.autoSaveDelay": 750,
   "liveshare.featureSet": "stable",
-  "terminal.integrated.rendererType": "dom",
   "gitlens.codeLens.scopes": [
     "containers"
   ],
   "gitlens.statusBar.alignment": "left",
-  "angularConsole.useNVM": false,
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.color": "#42a5f5",
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.requireConfig": true,
+  "files.autoSave": "onFocusChange",
+  "jest.autoRun": {},
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.formatOnSaveMode": "modifications",
+  "window.zoomLevel": -2,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[javascript]": {
+  "eslint.alwaysShowStatus": true,
+  "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "sort-imports.default-sort-style": "",
-  "prettier.configPath": ".prettierrc.json",
-  "prettier.requireConfig": true,
-  "files.autoSave": "onWindowChange",
-  "jest.autoEnable": false,
-  "jest.runAllTestsFirst": false,
-  "window.zoomLevel": -1,
-  "angular.experimental-ivy": true,
-  "editor.cursorStyle": "line",
-  "editor.insertSpaces": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-"
 }

@@ -4,6 +4,7 @@ filetype plugin indent on
 
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
 set spelllang=en_us,es_es
+set clipboard=unnamed
 autocmd BufRead,BufNewFile *.md set spell
 
 " Disable help menu

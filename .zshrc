@@ -70,7 +70,7 @@ ZSH_THEME="edvardm"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv docker-compose common-aliases command-not-found colored-man-pages bundler aws autoenv autojump globalias)
+plugins=(git docker-compose common-aliases command-not-found colored-man-pages bundler aws autojump globalias)
 
 # Antigen Config
 source /usr/local/share/antigen/antigen.zsh
@@ -112,6 +112,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dbranches="git branch | grep -v "master" | xargs git branch -D"
+
 eval "$(nodenv init -)"
 
 export PATH="/usr/local/sbin:$PATH"
