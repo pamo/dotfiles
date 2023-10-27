@@ -23,6 +23,7 @@ brew "mas"
 brew "mysql"
 brew "nodenv"
 brew "node-build"
+brew "openssh"
 brew "pkg-config"
 brew "python"
 brew "readline"
@@ -59,7 +60,6 @@ cask "spectacle", greedy: true
 cask "spotify", greedy: true
 cask "webpquicklook", greedy: true
 cask "visual-studio-code", greedy: true
-cask "viscosity", greedy: true
 
 # Fonts
 cask "font-fira-code"
