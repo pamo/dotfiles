@@ -16,7 +16,7 @@
   "explorer.openEditors.visible": 0,
   "editor.cursorBlinking": "phase",
   "editor.smoothScrolling": true,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "search.exclude": {
     "**/*.map": true,
