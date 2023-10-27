@@ -107,7 +107,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 
 # Screenshots Default Location
-LOCATION="$HOME/Documents/ScreenShots"
+LOCATION="$HOME/Dropbox/Documents/ScreenShots"
 mkdir $LOCATION
 echo "Setting screenshot location to ${LOCATION}"
 defaults write com.apple.screencapture location $LOCATION && killall SystemUIServer
@@ -429,7 +429,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo 'Adding Login Items'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/1password.app", name:"1password", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Alfred 3.app", name:"Alfred", hidden:true}'
-osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Bartender 2.app", name:"Bartender", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Google Chrome.app", name:"Google Chrome", hidden:true}'
 osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Spectacle.app", name:"Spectacle", hidden:true}'

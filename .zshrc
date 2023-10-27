@@ -73,7 +73,7 @@ ZSH_THEME="edvardm"
 plugins=(git docker-compose common-aliases command-not-found colored-man-pages bundler aws autojump globalias)
 
 # Antigen Config
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -117,9 +117,9 @@ alias dbranches="git branch | grep -v "master" | xargs git branch -D"
 eval "$(nodenv init -)"
 
 export PATH="/usr/local/sbin:$PATH"
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-source /usr/local/share/antigen/antigen.zsh
+
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
