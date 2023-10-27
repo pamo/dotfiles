@@ -1,7 +1,6 @@
 # 'brew tap'
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 
 # Formulae
