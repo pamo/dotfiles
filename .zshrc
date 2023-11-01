@@ -119,6 +119,7 @@ eval "$(nodenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 source $ZSH/oh-my-zsh.sh
 
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh

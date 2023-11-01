@@ -1,5 +1,4 @@
 # 'brew tap'
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 

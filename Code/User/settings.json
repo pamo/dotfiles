@@ -93,20 +93,11 @@
   "vim.gdefault": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "p"
-      ],
-      "after": [
-        "p",
-        "g",
-        "v",
-        "y"
-      ]
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
     },
     {
-      "before": [
-        ":"
-      ],
+      "before": [":"],
       "commands": [
         {
           "command": "workbench.action.showCommands"
@@ -175,9 +166,7 @@
   "polacode.transparentBackground": true,
   "files.autoSaveDelay": 750,
   "liveshare.featureSet": "stable",
-  "gitlens.codeLens.scopes": [
-    "containers"
-  ],
+  "gitlens.codeLens.scopes": ["containers"],
   "gitlens.statusBar.alignment": "left",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.color": "#42a5f5",
@@ -188,15 +177,13 @@
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.formatOnSaveMode": "modifications",
-  "window.zoomLevel": -2,
-  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.alwaysShowStatus": true,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
