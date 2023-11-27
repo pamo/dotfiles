@@ -1,0 +1,11 @@
+" Use the OS clipboard by default
+set clipboard=unnamed,unnamedplus
+
+" Enable native idea paste action for put operations
+set clipboard+=ideaput
+
+" Ignore case of searches
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase

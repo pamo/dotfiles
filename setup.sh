@@ -30,6 +30,7 @@ ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
 # vim
 ln -sfn "$(pwd)/.vim" ~
 ln -sfn "$(pwd)/.vim/.vimrc" ~
+ln -sfn "$(pwd)/.vim/.ideavimrc" ~
 mkdir ~/.vim/tmp
 
 echo "Installing pathogen"
