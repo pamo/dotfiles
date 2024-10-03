@@ -19,11 +19,16 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "search.exclude": {
+    "env": true,
+    "src/*/build": true,
+    "build": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
     "**/*.map": true,
     "**/.DS_Store": true,
     "**/.git": true,
     "**/build": true,
-    "**/node_modules": true,
     "**/tmp": true,
     "public/**": true
   },
@@ -57,7 +62,9 @@
     "statusBarItem.hoverBackground": "#009292",
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f"
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": true,
@@ -93,11 +100,20 @@
   "vim.gdefault": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     },
     {
-      "before": [":"],
+      "before": [
+        ":"
+      ],
       "commands": [
         {
           "command": "workbench.action.showCommands"
@@ -160,17 +176,19 @@
     }
   ],
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "telemetry.telemetryLevel": "crash",
+  "telemetry.telemetryLevel": "off",
   "workbench.settings.enableNaturalLanguageSearch": false,
   "editor.snippetSuggestions": "top",
   "polacode.transparentBackground": true,
   "files.autoSaveDelay": 750,
   "liveshare.featureSet": "stable",
-  "gitlens.codeLens.scopes": ["containers"],
+  "gitlens.codeLens.scopes": [
+    "containers"
+  ],
   "gitlens.statusBar.alignment": "left",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.color": "#42a5f5",
-  "prettier.configPath": ".prettierrc.json",
+  "prettier.configPath": ".prettierrc.js",
   "prettier.requireConfig": true,
   "files.autoSave": "onFocusChange",
   "jest.autoRun": {},
@@ -179,7 +197,7 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "eslint.alwaysShowStatus": true,
   "[typescriptreact]": {
@@ -188,4 +206,34 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.formatOnSave": true,
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.exclude": {
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": false,
+    "env": true,
+    "packageInfo*": true,
+    ".bemol": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  }
 }
