@@ -1,3 +1,9 @@
+" Plugins
+set surround
+set commentary
+set highlightedyank
+set matchit
+
 " Use the OS clipboard by default
 set clipboard=unnamed,unnamedplus
 
@@ -9,3 +15,4 @@ set ignorecase
 
 " When searching try to be smart about cases
 set smartcase
+set ideajoin
