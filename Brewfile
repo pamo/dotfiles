@@ -47,6 +47,7 @@ cask "fantastical", greedy: true
 cask "iterm2-beta", greedy: true
 cask "logitech-options", greedy: true
 cask "lastfm", greedy: true
+cask "notion", greedy: true
 cask "qlcolorcode", greedy: true
 cask "qlimagesize", greedy: true
 cask "qlmarkdown", greedy: true
