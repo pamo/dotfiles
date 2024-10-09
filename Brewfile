@@ -42,7 +42,6 @@ cask "google-chrome", greedy: true
 cask "1password", greedy: true
 cask "alfred", greedy: true
 cask "docker", greedy: true
-cask "dockstation", greedy: true
 cask "dropbox", greedy: true
 cask "fantastical", greedy: true
 cask "iterm2-beta", greedy: true
@@ -53,7 +52,6 @@ cask "qlimagesize", greedy: true
 cask "qlmarkdown", greedy: true
 cask "quicklook-json", greedy: true
 cask "rescuetime", greedy: true
-cask "sequel-pro", greedy: true
 cask "spectacle", greedy: true
 cask "spotify", greedy: true
 cask "webpquicklook", greedy: true
