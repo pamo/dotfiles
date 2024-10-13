@@ -15,22 +15,22 @@ echo "Setting OSX Defaults..."
 mkdir ~/.tmp
 mkdir ~/dev
 
-ln -sfn "$(pwd -P)" ~/
-ln -sfn "$(pwd)/.bash_profile" ~
-ln -sfn "$(pwd)/.gitconfig" ~
-ln -sfn "$(pwd)/.gitignore" ~
-ln -sfn "$(pwd)/.gitattributes" ~
-ln -sfn "$(pwd)/.inputrc" ~
-ln -sfn "$(pwd)/.gemrc" ~
-ln -sfn "$(pwd)/.npmrc" ~
-ln -sfn "$(pwd)/.zshrc" ~
-ln -s "$(pwd)/.iterm" ~
-ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
+sudo ln -sfn "$(pwd -P)" ~/
+sudo ln -sfn "$(pwd)/.bash_profile" ~
+sudo ln -sfn "$(pwd)/.gitconfig" ~
+sudo ln -sfn "$(pwd)/.gitignore" ~
+sudo ln -sfn "$(pwd)/.gitattributes" ~
+sudo ln -sfn "$(pwd)/.inputrc" ~
+sudo ln -sfn "$(pwd)/.gemrc" ~
+sudo ln -sfn "$(pwd)/.npmrc" ~
+sudo ln -sfn "$(pwd)/.zshrc" ~
+sudo ln -s "$(pwd)/.iterm" ~
+sudo ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
 
 # vim
-ln -sfn "$(pwd)/.vim" ~
-ln -sfn "$(pwd)/.vim/.vimrc" ~
-ln -sfn "$(pwd)/.vim/.ideavimrc" ~
+sudo ln -sfn "$(pwd)/.vim" ~
+sudo ln -sfn "$(pwd)/.vim/.vimrc" ~
+sudo ln -sfn "$(pwd)/.vim/.ideavimrc" ~
 mkdir ~/.vim/tmp
 
 echo "Installing pathogen"
@@ -41,7 +41,7 @@ echo "Installing brew and brew cask packages..."
 ./brew_setup.sh
 
 # vscode
-ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
+sudo ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
 
 git submodule init
 git submodule update --remote --rebase
@@ -59,7 +59,7 @@ sudo chmod 755 /usr/local/share/zsh/functions
 echo "Link documents to dropbox"
 cd $HOME
 rm -rf "Documents"
-ln -sfn "$HOME/Dropbox/Documents" $HOME
+sudo ln -sfn "$HOME/Dropbox/Documents" $HOME
 
 
 echo "Manual steps:"

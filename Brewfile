@@ -1,7 +1,3 @@
-# 'brew tap'
-tap "homebrew/cask-versions"
-tap "homebrew/cask-fonts"
-
 # Formulae
 brew "imagemagick"
 brew "antigen"
@@ -15,7 +11,7 @@ brew "git"
 brew "git-extras"
 brew "grip"
 brew "gti"
-brew "htop-osx"
+brew "htop"
 brew "markdown"
 brew "mas"
 brew "mysql"
@@ -44,7 +40,7 @@ cask "alfred", greedy: true
 cask "docker", greedy: true
 cask "dropbox", greedy: true
 cask "fantastical", greedy: true
-cask "iterm2-beta", greedy: true
+cask "iterm2@beta", greedy: true
 cask "logitech-options", greedy: true
 cask "lastfm", greedy: true
 cask "notion", greedy: true
