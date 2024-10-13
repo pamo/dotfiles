@@ -82,7 +82,6 @@ runtime vimrc.d/airline.vim
 runtime vimrc.d/auto-commands.vim
 runtime vimrc.d/ctrlp.vim
 runtime vimrc.d/mappings.vim
-runtime vimrc.d/syntastic.vim
 runtime vimrc.d/nerdtree.vim
 runtime vimrc.d/prettier.vim
 packadd! matchit
