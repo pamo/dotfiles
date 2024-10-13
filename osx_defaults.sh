@@ -34,10 +34,6 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 # General UI/UX                                                               #
 ###############################################################################
 echo ""
-echo "Dark mode"
-defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool YES
-
-echo ""
 echo "Menu bar: show battery percentage"
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 

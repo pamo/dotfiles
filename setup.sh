@@ -25,6 +25,7 @@ sudo ln -sfn "$(pwd)/.gemrc" ~
 sudo ln -sfn "$(pwd)/.npmrc" ~
 sudo ln -sfn "$(pwd)/.zshrc" ~
 sudo ln -s "$(pwd)/.iterm" ~
+sudo rm "$(pwd)/.GlobalPreferences.plist"
 sudo ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
 
 # vim
