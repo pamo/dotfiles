@@ -49,6 +49,7 @@ cask "qlimagesize", greedy: true
 cask "qlmarkdown", greedy: true
 cask "quicklook-json", greedy: true
 cask "rescuetime", greedy: true
+cask "slack", greedy: true
 cask "spectacle", greedy: true
 cask "spotify", greedy: true
 cask "webpquicklook", greedy: true

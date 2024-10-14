@@ -35,7 +35,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 ###############################################################################
 echo ""
 echo "Menu bar: show battery percentage"
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowPercent -string "true"
 
 echo ""
 echo "Set sidebar icon size to Small"
@@ -43,11 +43,11 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
 echo ""
 echo "Expand save panel by default"
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool YES
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 echo ""
 echo "Expand print panel by default"
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool YES
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 echo "Automatically quit printer app once the print jobs complete"
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -62,7 +62,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool NO
 
 echo ""
 echo "Disable the Time Machine new disk requests dialog"
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo ""
 echo "Check for software updates daily, not just once per week"
@@ -110,7 +110,7 @@ defaults write com.apple.screencapture location $LOCATION && killall SystemUISer
 
 echo ""
 echo "Disable Photos.app from starting everytime a device is plugged in"
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Trackpad, mouse, keyboard, and input                                        #
@@ -126,7 +126,7 @@ defaults write com.apple.dock mru-spaces -bool NO
 
 echo ""
 echo "Enable press-and-hold for keys and disable key repeat"
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool YES
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
 echo ""
 echo " macOS: Set a blazingly fast keyboard repeat rate"
@@ -135,7 +135,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 40
 
 echo ""
 echo "Automatically illuminate built-in MacBook keyboard in low light"
-defaults write com.apple.BezelServices kDim -bool YES
+defaults write com.apple.BezelServices kDim -bool true
 
 echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
@@ -143,7 +143,7 @@ defaults write com.apple.BezelServices kDimTime -int 300
 
 echo ""
 echo "Trackpad: enable tap to click for this user and for the login screen"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool YES &&
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true &&
   defaults write -g com.apple.mouse.tapBehavior -int 1 &&
   defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 
@@ -154,7 +154,7 @@ defaults write -g com.apple.trackpad.scaling -int 5
 
 echo ""
 echo "Trackpad: swipe between pages with three fingers"
-defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool YES
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
@@ -169,16 +169,16 @@ sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
 
 echo ""
 echo "Use scroll gesture with the Ctrl (^) modifier key to zoom"
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool YES
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
 echo ""
 echo "Follow the keyboard focus while zoomed in"
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool YES
+defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 echo ""
 echo "Function keys"
-defaults write -g com.apple.keyboard.fnState -bool YES
+defaults write -g com.apple.keyboard.fnState -bool true
 
 echo ""
 echo "Increasing sound quality for Bluetooth headphones/headsets"
@@ -186,7 +186,7 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 
 echo ""
 echo "Enbabling Autocorrect"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool YES
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
 
 ###############################################################################
 # Screen Saver                                                                #
@@ -213,31 +213,31 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 echo ""
 echo "Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons"
-defaults write com.apple.finder QuitMenuItem -bool YES
+defaults write com.apple.finder QuitMenuItem -bool true
 
 echo ""
 echo "Finder: show hidden files by default"
-defaults write com.apple.Finder AppleShowAllFiles -bool YES
+defaults write com.apple.Finder AppleShowAllFiles -bool true
 
 echo ""
 echo "Finder: set window title to full POSIX file path of current folder"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 echo ""
 echo "Finder: show all filename extensions"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool YES
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo ""
 
 echo "Finder: show path bar"
-defaults write com.apple.finder ShowPathbar -bool YES
+defaults write com.apple.finder ShowPathbar -bool true
 
 echo ""
 echo "Finder: show status bar"
-defaults write com.apple.finder ShowStatusBar -bool YES
+defaults write com.apple.finder ShowStatusBar -bool true
 
 echo ""
 echo "Finder: allow text selection in Quick Look"
-defaults write com.apple.finder QLEnableTextSelection -bool YES
+defaults write com.apple.finder QLEnableTextSelection -bool true
 
 echo ""
 echo "When performing a search, search the current folder by default"
@@ -249,13 +249,13 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool NO
 
 echo ""
 echo "Avoid creating .DS_Store files on network volumes"
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool YES
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 echo ""
 echo "Automatically open a new Finder window when a volume is mounted"
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool YES
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool YES
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool YES
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 echo "Disable the warning before emptying the Trash"
 defaults write com.apple.finder WarnOnEmptyTrash -bool NO
@@ -271,15 +271,15 @@ chflags nohidden ~/Library
 
 echo ""
 echo "Disable window animations and Get Info animations"
-defaults write com.apple.finder DisableAllAnimations -bool YES
+defaults write com.apple.finder DisableAllAnimations -bool true
 
 echo ""
 echo "Expand the following File Info panes:"
 echo "“General”, “Open with”, and “Sharing & Permissions”"
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
-  General -bool YES \
-  OpenWith -bool YES \
-  Privileges -bool YES
+  General -bool true \
+  OpenWith -bool true \
+  Privileges -bool true
 
 ###############################################################################
 # Dock & hot corners                                                          #
@@ -299,14 +299,14 @@ defaults write com.apple.dock magnification -int 1
 
 echo ""
 echo "Don’t show Dashboard as a Space"
-defaults write com.apple.dock "dashboard-in-overlay" -bool YES
+defaults write com.apple.dock "dashboard-in-overlay" -bool true
 
 echo ""
 echo "Make Dock icons of hidden applications translucent"
-defaults write com.apple.dock showhidden -bool YES
+defaults write com.apple.dock showhidden -bool true
 
 echo "Show indicator lights for open applications in the Dock"
-defaults write com.apple.dock show-process-indicators -bool YES
+defaults write com.apple.dock show-process-indicators -bool true
 
 echo ""
 echo "Hot corners"
@@ -334,7 +334,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 
 echo ""
 echo "Minimize windows into their application’s icon"
-defaults write com.apple.dock minimize-to-application -bool YES
+defaults write com.apple.dock minimize-to-application -bool true
 
 echo ""
 echo "Wipe all (default) app icons from the Dock"
@@ -350,7 +350,7 @@ defaults write com.apple.dock "persistent-apps" {} &&
 echo ""
 echo "Privacy: don’t send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool NO
-defaults write com.apple.Safari SuppressSearchSuggestions -bool YES
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
 echo ""
 echo "Set Safari’s home page to nothing"
@@ -366,7 +366,7 @@ defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 echo ""
 echo "Enable Safari’s debug menu"
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool YES
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 echo ""
 echo "Remove useless icons from Safari’s bookmarks bar"
@@ -374,13 +374,13 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 echo ""
 echo "Enable the Develop menu and the Web Inspector in Safari"
-defaults write com.apple.Safari IncludeDevelopMenu -bool YES
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool YES
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool YES
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
 echo ""
 echo "Add a context menu item for showing the Web Inspector in web views"
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool YES
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 echo ""
 echo "Prevent Safari from opening "safe" files automatically after downloading"
@@ -392,7 +392,7 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool NO
 
 echo ""
 echo "Show the main window when launching Activity Monitor"
-defaults write com.apple.ActivityMonitor OpenMainWindow -bool YES
+defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 echo ""
 echo "Show all processes in Activity Monitor"
@@ -406,12 +406,12 @@ sudo spctl --master-disable
 
 echo ""
 echo "Enable the WebKit Developer Tools in the Mac App Store"
-defaults write com.apple.appstore WebKitDeveloperExtras -bool YES
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 echo ""
 echo "Enable Debug Menu in the Mac App Store and Reminders app"
-defaults write com.apple.appstore ShowDebugMenu -bool YES
-defaults write com.apple.reminders RemindersDebugMenu -boolean YES
+defaults write com.apple.appstore ShowDebugMenu -bool true
+defaults write com.apple.reminders RemindersDebugMenu -boolean true
 
 
 echo "Disabling OS X Gate Keeper"
