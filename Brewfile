@@ -8,6 +8,7 @@ brew "chruby"
 brew "dos2unix"
 brew "findutils"
 brew "git"
+brew "gh"
 brew "git-extras"
 brew "grip"
 brew "gti"
@@ -37,12 +38,11 @@ cask "keepingyouawake", greedy: true
 cask "google-chrome", greedy: true
 cask "1password", greedy: true
 cask "alfred", greedy: true
-cask "docker", greedy: true
+cask "discord", greedy: true
 cask "dropbox", greedy: true
 cask "fantastical", greedy: true
 cask "iterm2@beta", greedy: true
 cask "logitech-options", greedy: true
-cask "lastfm", greedy: true
 cask "notion", greedy: true
 cask "qlcolorcode", greedy: true
 cask "qlimagesize", greedy: true

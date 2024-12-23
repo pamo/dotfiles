@@ -1,73 +1,89 @@
 {
-  "sync.gist": "71f2d29cab091d1001315408d6c2a438",
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "prettier.singleQuote": true,
-  "typescript.npm": "/usr/local/bin/npm",
-  "workbench.startupEditor": "none",
-  "editor.lineNumbers": "relative",
-  "editor.minimap.enabled": false,
-  "editor.showFoldingControls": "always",
-  "editor.wordWrap": "on",
-  "html.format.wrapAttributes": "force-aligned",
-  "explorer.openEditors.visible": 0,
-  "editor.cursorBlinking": "phase",
-  "editor.smoothScrolling": true,
-  "editor.cursorSmoothCaretAnimation": "on",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "search.exclude": {
-    "env": true,
-    "src/*/build": true,
-    "build": true,
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/*.code-search": true,
-    "**/*.map": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/build": true,
-    "**/tmp": true,
-    "public/**": true
+  "[brazilPackageConfig]": {
+    "workbench.editor.languageDetection": false
   },
-  "terminal.integrated.fontFamily": "Fira Code",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.25,
-  "emmet.triggerExpansionOnTab": true,
-  "vim.useSystemClipboard": true,
-  "vim.overrideCopy": true,
-  "vim.easymotion": true,
-  "vim.statusBarColorControl": true,
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.wordWrap": "bounded",
     "files.trimTrailingWhitespace": false
   },
-  "explorer.confirmDelete": false,
-  "scss.validate": true,
-  "css.validate": true,
-  "editor.tabSize": 2,
-  "workbench.colorTheme": "fairyfloss",
-  "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#005f5f",
-    "titleBar.inactiveBackground": "#005f5f99",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveForeground": "#e7e7e799",
-    "activityBar.background": "#009292",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#ff9fff",
-    "activityBarBadge.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#009292",
-    "statusBar.background": "#005f5f",
-    "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f",
-    "statusBar.foreground": "#ffffff",
-    "statusBar.debuggingForeground": "#ffffff"
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "js/ts.implicitProjectConfig.checkJs": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "amazonQ.telemetry": false,
+  "amazonQ.workspaceIndex": true,
+  "css.validate": true,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.showFoldingControls": "always",
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "on",
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.alwaysShowStatus": true,
+  "explorer.confirmDelete": false,
+  "explorer.openEditors.visible": 0,
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 750,
+  "files.exclude": {
+    ".viceroy": true,
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": false,
+    "env": true,
+    "packageInfo*": true,
+    ".bemol": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/node_modules/*/**": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "gitlens.codeLens.scopes": ["containers"],
   "gitlens.menus": {
     "editor": {
       "blame": true,
@@ -94,33 +110,14 @@
       "remote": true
     }
   },
+  "gitlens.statusBar.alignment": "left",
   "gitlens.statusBar.reduceFlicker": true,
-  "vim.foldfix": true,
-  "vim.hlsearch": true,
-  "vim.gdefault": true,
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "p"
-      ],
-      "after": [
-        "p",
-        "g",
-        "v",
-        "y"
-      ]
-    },
-    {
-      "before": [
-        ":"
-      ],
-      "commands": [
-        {
-          "command": "workbench.action.showCommands"
-        }
-      ]
-    }
-  ],
+  "html.format.wrapAttributes": "force-aligned",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "jest.autoRun": {},
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "liveshare.featureSet": "stable",
+  "material-icon-theme.folders.color": "#42a5f5",
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
@@ -175,65 +172,85 @@
       "value": "#42b883"
     }
   ],
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "telemetry.telemetryLevel": "off",
-  "workbench.settings.enableNaturalLanguageSearch": false,
-  "editor.snippetSuggestions": "top",
   "polacode.transparentBackground": true,
-  "files.autoSaveDelay": 750,
-  "liveshare.featureSet": "stable",
-  "gitlens.codeLens.scopes": [
-    "containers"
-  ],
-  "gitlens.statusBar.alignment": "left",
-  "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.folders.color": "#42a5f5",
   "prettier.configPath": ".prettierrc.js",
   "prettier.requireConfig": true,
-  "files.autoSave": "onFocusChange",
-  "jest.autoRun": {},
-  "editor.cursorStyle": "line",
-  "editor.insertSpaces": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.alwaysShowStatus": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "prettier.singleQuote": true,
+  "scss.validate": true,
+  "search.exclude": {
+    "env": true,
+    "src/*/build": true,
+    "build": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/*.map": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/tmp": true,
+    "public/**": true
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.formatOnSave": true,
-  "[graphql]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "sync.gist": "71f2d29cab091d1001315408d6c2a438",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.env.osx": {
+    "Q_NEW_SESSION": "1"
   },
-  "files.watcherExclude": {
-    "**/build/**": true,
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/*/**": true,
-    "**/.hg/store/**": true
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.25,
+  "typescript.npm": "/usr/local/bin/npm",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "viceroy.config.internal.lastUpdateTime": "2024-12-09T17:53:03.968Z",
+  "viceroy.config.lastVersion": "0.53.201808",
+  "viceroy.config.notifyGlibcIssue": false,
+  "viceroy.doc.welcome.showAtStartup": false,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.gdefault": true,
+  "vim.hlsearch": true,
+  "vim.overrideCopy": true,
+  "vim.statusBarColorControl": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "after": ["p", "g", "v", "y"],
+      "before": ["p"]
+    },
+    {
+      "before": [":"],
+      "commands": [
+        {
+          "command": "workbench.action.showCommands"
+        }
+      ]
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#009292",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff9fff",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBar.background": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.debuggingForeground": "#ffffff",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBarItem.hoverBackground": "#009292",
+    "titleBar.activeBackground": "#005f5f",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#005f5f99",
+    "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "files.exclude": {
-    "apollo-overrides": true,
-    "release-info": true,
-    "src/*/build": false,
-    "build": false,
-    "env": true,
-    "packageInfo*": true,
-    ".bemol": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true
+  "workbench.colorTheme": "fairyfloss",
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.startupEditor": "none",
+  "yaml.schemas": {
+    "file:///Users/ocpamela/.vscode/extensions/marklel.vscode-brazil-0.53.201808/assets/languages/rde/schema.json": "**/definition.yaml"
   }
 }
