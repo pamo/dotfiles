@@ -1,69 +1,89 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-echo "Install Command Line Tools without Xcode"
-xcode-select --install
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
-echo "Check for github ssh keys"
-./git-login.sh
+# ─── Xcode CLI Tools ────────────────────────────────────────────────
+echo "==> Installing Xcode CLI tools"
+xcode-select --install 2>/dev/null || true
 
-echo "Checking for updates..."
-softwareupdate --install --all
+# ─── Homebrew ────────────────────────────────────────────────────────
+echo "==> Installing Homebrew"
+if ! command -v brew &>/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
-echo "Setting OSX Defaults..."
-./osx_defaults.sh
+echo "==> Installing packages from Brewfile"
+brew bundle --file="$DOTFILES/Brewfile"
 
-mkdir ~/.tmp
-mkdir ~/dev
+# ─── oh-my-zsh ───────────────────────────────────────────────────────
+echo "==> Installing oh-my-zsh"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
 
-ln -sfn "$(pwd -P)" ~/
-ln -sfn "$(pwd)/.bash_profile" ~
-ln -sfn "$(pwd)/.gitconfig" ~
-ln -sfn "$(pwd)/.gitignore" ~
-ln -sfn "$(pwd)/.gitattributes" ~
-ln -sfn "$(pwd)/.inputrc" ~
-ln -sfn "$(pwd)/.gemrc" ~
-ln -sfn "$(pwd)/.npmrc" ~
-ln -sfn "$(pwd)/.zshrc" ~
-ln -s "$(pwd)/.iterm" ~
-ln -s "$(pwd)/.GlobalPreferences.plist" ~/Library/Preferences
+# ─── GitHub auth (replaces git-login.sh) ─────────────────────────────
+# `gh auth login` handles SSH key setup, git credential helper, and GitHub auth
+echo "==> GitHub authentication"
+if ! gh auth status &>/dev/null; then
+  echo "  Run: gh auth login"
+  echo "  Choose: SSH → Generate new key → Authenticate via browser"
+fi
 
-# vim
-ln -sfn "$(pwd)/.vim" ~
-ln -sfn "$(pwd)/.vim/.vimrc" ~
-ln -sfn "$(pwd)/.vim/.ideavimrc" ~
-mkdir ~/.vim/tmp
+# ─── Project directories ─────────────────────────────────────────────
+mkdir -p ~/me ~/dev
 
-echo "Installing pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# ─── Symlink dotfiles ────────────────────────────────────────────────
+echo "==> Linking dotfiles"
+ln -sfn "$DOTFILES/.zshrc" ~
+ln -sfn "$DOTFILES/.vimrc" ~
+ln -sfn "$DOTFILES/.gitconfig" ~
+ln -sfn "$DOTFILES/.gitignore" ~
+ln -sfn "$DOTFILES/.npmrc" ~
 
-echo "Installing brew and brew cask packages..."
-./brew_setup.sh
+# Vim colorscheme
+mkdir -p ~/.vim/colors
+cp "$DOTFILES/.vim/colors/fairyfloss.vim" ~/.vim/colors/ 2>/dev/null || true
 
-# vscode
-ln -sf "$(pwd)/Code" /Users/$(whoami)/Library/Application\ Support
+# ─── iTerm2 — load preferences from dotfiles ─────────────────────────
+echo "==> Configuring iTerm2 to load preferences from dotfiles"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$DOTFILES/.iterm"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
-git submodule init
-git submodule update --remote --rebase
+# ─── VSCode ──────────────────────────────────────────────────────────
+echo "==> Linking VSCode settings"
+VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+mkdir -p "$VSCODE_DIR"
+ln -sfn "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"
+ln -sfn "$DOTFILES/vscode/keybindings.json" "$VSCODE_DIR/keybindings.json"
 
-# Custom Sounds
-cp -r "$(pwd)/Sounds/" ~/Library/Sounds/
+if command -v code &>/dev/null; then
+  echo "==> Installing VSCode extensions"
+  xargs -L1 code --install-extension < "$DOTFILES/vscode/extensions.txt"
+fi
 
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sh -c "$(curl -L git.io/antigen > antigen.zsh)"
+# ─── Vim plugins ─────────────────────────────────────────────────────
+echo "==> Installing vim plugins"
+vim +PlugInstall +qall 2>/dev/null
 
-sudo chmod 755 /usr/local/share/zsh
-sudo chmod 755 /usr/local/share/zsh/functions
+# ─── Runtimes via mise ───────────────────────────────────────────────
+echo "==> Installing runtimes"
+mise install node@lts
+mise use --global node@lts
 
-echo "Link documents to dropbox"
-cd $HOME
-rm -rf "Documents"
-ln -sfn "$HOME/Dropbox/Documents" $HOME
+# ─── Custom sounds ───────────────────────────────────────────────────
+cp -r "$DOTFILES/Sounds/" ~/Library/Sounds/ 2>/dev/null || true
 
+# ─── macOS defaults ──────────────────────────────────────────────────
+echo "==> Applying macOS defaults"
+chmod +x "$DOTFILES/macos.sh"
+"$DOTFILES/macos.sh"
 
+echo ""
+echo "==> Done! Restart your terminal."
+echo ""
 echo "Manual steps:"
-echo "1 - Open iTerm2 preferences and check the Load Preferences checkbox pointing to ~/.iterm"
-echo "2 - Go to Profiles > Text and change the font to Fira Code"
-
-exit 0
+echo "  1. Run 'gh auth login' if not already authenticated"
+echo "  2. Open iTerm2 — it will auto-load preferences from $DOTFILES/.iterm"
+echo "  3. To save iTerm2 changes back: open Preferences → General → Preferences → check 'Save changes to folder when iTerm2 quits'"

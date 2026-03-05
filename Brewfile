@@ -1,66 +1,38 @@
-# 'brew tap'
-tap "homebrew/cask-versions"
-tap "homebrew/cask-fonts"
-
-# Formulae
-brew "imagemagick"
-brew "antigen"
-brew "autoconf"
-brew "autojump"
-brew "bash-completion"
-brew "chruby"
-brew "dos2unix"
-brew "findutils"
+# CLI Tools
 brew "git"
-brew "git-extras"
-brew "grip"
-brew "gti"
-brew "htop-osx"
-brew "markdown"
-brew "mas"
-brew "mysql"
-brew "nodenv"
-brew "node-build"
-brew "openssh"
-brew "pkg-config"
-brew "python"
-brew "readline"
-brew "ripgrep"
-brew "ruby-build"
-brew "ruby-install"
-brew "ssh-copy-id"
-brew "tig"
-brew "trash"
+brew "git-delta"          # Better diffs: `git diff` shows side-by-side with syntax highlighting
+brew "gh"                 # GitHub CLI: `gh pr create`, `gh issue list`, `gh auth login`
+brew "ripgrep"            # Fast search: `rg "pattern"` (replaces ag/grep)
+brew "fd"                 # Modern find: `fd "*.json"` (replaces `find . -name "*.json"`)
+brew "bat"                # Modern cat: `bat file.txt` (syntax highlighting, line numbers)
+brew "eza"                # Modern ls: `eza -la --icons --git` (replaces ls)
+brew "zoxide"             # Smart cd: `z project` jumps to ~/dev/project (replaces autojump)
+brew "fzf"                # Fuzzy finder: `ctrl-r` for history, `ctrl-t` for files
+brew "jq"                 # JSON processor: `curl api | jq '.data'`
+brew "htop"               # Process viewer (renamed from htop-osx)
 brew "tree"
-brew "vim"
+brew "trash"
 brew "wget"
-brew "zsh"
+brew "vim"
+brew "mise"               # Runtime manager: `mise use node@22` (replaces nodenv, chruby, pyenv)
+brew "dos2unix"
+brew "tig"
+brew "git-extras"
+brew "zsh-syntax-highlighting"  # Fish-like syntax highlighting for zsh
 
-# Casks
-cask "keepingyouawake", greedy: true
-cask "google-chrome", greedy: true
-cask "1password", greedy: true
-cask "alfred", greedy: true
-cask "docker", greedy: true
-cask "dockstation", greedy: true
-cask "dropbox", greedy: true
-cask "fantastical", greedy: true
-cask "iterm2-beta", greedy: true
-cask "logitech-options", greedy: true
-cask "lastfm", greedy: true
-cask "qlcolorcode", greedy: true
-cask "qlimagesize", greedy: true
-cask "qlmarkdown", greedy: true
-cask "quicklook-json", greedy: true
-cask "rescuetime", greedy: true
-cask "sequel-pro", greedy: true
-cask "spectacle", greedy: true
-cask "spotify", greedy: true
-cask "webpquicklook", greedy: true
-cask "visual-studio-code", greedy: true
+# Apps
+cask "1password"
+cask "alfred"
+cask "arc"
+cask "docker"
+cask "google-chrome"
+cask "iterm2"
+cask "keepingyouawake"
+cask "rectangle"          # Window tiling (replaces spectacle). macOS Tahoe has built-in tiling too
+cask "rescuetime"
+cask "lastfm"
+cask "fantastical"
+cask "visual-studio-code"
 
 # Fonts
-cask "font-fira-code"
-
-# Mac AppStore
-mas "Giphy Capture", id: 668208984
+cask "font-fira-code-nerd-font"  # Fira Code + icons for terminal/vim status lines

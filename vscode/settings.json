@@ -1,0 +1,129 @@
+{
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.showFoldingControls": "always",
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "phase",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 750,
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/node_modules": false,
+    "**/Thumbs.db": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/*.code-search": true,
+    "**/*.map": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/tmp": true
+  },
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.colorTheme": "fairyfloss",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#005f5f",
+    "titleBar.inactiveBackground": "#005f5f99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "activityBar.background": "#009292",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff9fff",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#009292",
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.25,
+  "html.format.wrapAttributes": "force-aligned",
+  "emmet.triggerExpansionOnTab": true,
+  "prettier.singleQuote": true,
+  "prettier.configPath": ".prettierrc.js",
+  "prettier.requireConfig": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "scss.validate": true,
+  "css.validate": true,
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  "vim.easymotion": true,
+  "vim.statusBarColorControl": true,
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.gdefault": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": [":"],
+      "commands": [{ "command": "workbench.action.showCommands" }]
+    }
+  ],
+  "gitlens.menus": {
+    "editor": { "blame": true, "clipboard": true, "compare": true, "details": true, "history": true, "remote": true },
+    "editorGroup": { "blame": true, "compare": true, "history": false, "remote": true },
+    "editorTab": { "compare": false, "history": false, "remote": true },
+    "explorer": { "compare": true, "history": true, "remote": true }
+  },
+  "gitlens.statusBar.reduceFlicker": true,
+  "gitlens.codeLens.scopes": ["containers"],
+  "gitlens.statusBar.alignment": "left",
+  "material-icon-theme.folders.color": "#42a5f5",
+  "explorer.confirmDelete": false,
+  "telemetry.telemetryLevel": "off",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "files.trimTrailingWhitespace": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
