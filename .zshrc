@@ -23,6 +23,10 @@ eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 
 # Aliases
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ls="eza --icons"
 alias ll="eza -la --icons --git"
 alias lt="eza -la --icons --tree --level=2"
