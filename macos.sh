@@ -209,6 +209,12 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
+# iTerm2                                                                      #
+###############################################################################
+defaults write com.googlecode.iterm2 "Normal Font" -string "FiraCodeNerdFont-Regular 13"
+defaults write com.googlecode.iterm2 "Non Ascii Font" -string "FiraCodeNerdFont-Regular 13"
+
+###############################################################################
 # Kill affected apps                                                          #
 ###############################################################################
 echo "==> Restarting affected apps"
