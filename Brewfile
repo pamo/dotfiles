@@ -25,6 +25,7 @@ cask "1password"
 cask "alfred"
 cask "arc"
 cask "claude-code"
+cask "conductor"
 cask "docker-desktop"
 cask "google-chrome"
 cask "iterm2"
@@ -33,7 +34,6 @@ cask "rectangle"          # Window tiling (replaces spectacle). macOS Tahoe has 
 cask "rescuetime"
 cask "lastfm"
 cask "linear-linear"
-cask "fantastical"
 cask "visual-studio-code"
 
 # Fonts
