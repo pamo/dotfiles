@@ -34,6 +34,23 @@ fi
 # ─── Project directories ─────────────────────────────────────────────
 mkdir -p ~/me ~/dev
 
+# ─── Git config files ────────────────────────────────────────────────
+echo "==> Creating git config files"
+if [ ! -f ~/.gitconfig-personal ]; then
+  cat > ~/.gitconfig-personal <<EOF
+[user]
+  email = pamela.ocampo@gmail.com
+EOF
+fi
+
+if [ ! -f ~/.gitconfig-work ]; then
+  cat > ~/.gitconfig-work <<EOF
+[user]
+  email = your-work-email@example.com
+EOF
+  echo "  ⚠️  Edit ~/.gitconfig-work with your work email"
+fi
+
 # ─── Symlink dotfiles ────────────────────────────────────────────────
 echo "==> Linking dotfiles"
 ln -sfn "$DOTFILES/.zshrc" ~

@@ -30,6 +30,9 @@
   line-numbers = true
 [color]
   ui = true
+[color "status"]
+  added = yellow
+  changed = red
 [alias]
   amend = commit --amend
   ap = add -p

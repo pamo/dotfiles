@@ -14,3 +14,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 Code/
+
+# Vim plugin directories
+.vim/autoload/
+.vim/plugged/
+
+# iTerm2 auto-generated changes
+.iterm/com.googlecode.iterm2.plist
