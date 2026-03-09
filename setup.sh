@@ -59,6 +59,10 @@ ln -sfn "$DOTFILES/.gitconfig" ~
 ln -sfn "$DOTFILES/.gitignore" ~
 ln -sfn "$DOTFILES/.npmrc" ~
 
+# mise config
+mkdir -p ~/.config/mise
+ln -sfn "$DOTFILES/mise.toml" ~/.config/mise/config.toml
+
 # Vim colorscheme
 mkdir -p ~/.vim/colors
 cp "$DOTFILES/.vim/colors/fairyfloss.vim" ~/.vim/colors/ 2>/dev/null || true
@@ -86,6 +90,7 @@ vim +PlugInstall +qall 2>/dev/null
 
 # ─── Runtimes via mise ───────────────────────────────────────────────
 echo "==> Installing runtimes"
+mise trust "$DOTFILES"
 mise install node@lts
 mise use --global node@lts
 

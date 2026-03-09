@@ -1,0 +1,14 @@
+# mise configuration
+# https://mise.jdx.dev/configuration.html
+
+[settings]
+experimental = true
+legacy_version_file = true  # Read .node-version, .ruby-version, etc.
+always_keep_download = false
+always_keep_install = false
+plugin_autoupdate_last_check_duration = "7d"
+
+[tools]
+# Global tool versions
+# Override per-project with local .mise.toml or .tool-versions
+node = "lts"
