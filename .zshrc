@@ -22,6 +22,12 @@ eval "$(zoxide init zsh)"
 # mise — `mise use node@22`, `mise ls` to list runtimes
 eval "$(mise activate zsh)"
 
+# direnv — auto-load .envrc per directory
+eval "$(direnv hook zsh)"
+
+# Beyond
+alias bdev="aws sso login --sso-session beyond && pnpm --prefix ~/dev/beyond dev"
+
 # Aliases
 alias ..="cd .."
 alias ...="cd ../.."
@@ -43,3 +49,4 @@ format-staged() {
 
 # fzf key bindings
 source <(fzf --zsh) 2>/dev/null
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"

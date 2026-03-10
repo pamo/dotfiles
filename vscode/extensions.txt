@@ -1,3 +1,4 @@
+anthropic.claude-code
 ast-grep.ast-grep-vscode
 bradlc.vscode-tailwindcss
 christian-kohler.npm-intellisense

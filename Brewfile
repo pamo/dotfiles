@@ -10,23 +10,28 @@ brew "zoxide"             # Smart cd: `z project` jumps to ~/dev/project (replac
 brew "fzf"                # Fuzzy finder: `ctrl-r` for history, `ctrl-t` for files
 brew "jq"                 # JSON processor: `curl api | jq '.data'`
 brew "htop"               # Process viewer (renamed from htop-osx)
+brew "postgresql"
 brew "tree"
 brew "trash"
 brew "wget"
 brew "vim"
 brew "mise"               # Runtime manager: `mise use node@22` (replaces nodenv, chruby, pyenv)
+brew "direnv"             # Auto-load .envrc per directory: `cd ~/dev/beyond` sets AWS_PROFILE
 brew "dos2unix"
 brew "tig"
 brew "git-extras"
+brew "uv"
 brew "zsh-syntax-highlighting"  # Fish-like syntax highlighting for zsh
 
 # Apps
 cask "1password"
 cask "alfred"
 cask "arc"
+cask "claude"
 cask "claude-code"
 cask "conductor"
 cask "docker-desktop"
+cask "figma"
 cask "google-chrome"
 cask "iterm2"
 cask "keepingyouawake"
