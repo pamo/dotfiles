@@ -162,6 +162,17 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 echo "==> Dock"
 
+# Clear default Dock and add preferred apps
+if command -v dockutil &>/dev/null; then
+  dockutil --remove all --no-restart
+  dockutil --add /Applications/Slack.app --no-restart
+  dockutil --add /Applications/Notion.app --no-restart
+  dockutil --add /Applications/iTerm.app --no-restart
+  dockutil --add /System/Applications/Music.app --no-restart
+  dockutil --add /System/Applications/Calendar.app --no-restart
+  dockutil --add "/Applications/Visual Studio Code.app" --no-restart
+fi
+
 # Icon size
 defaults write com.apple.dock tilesize -int 36
 

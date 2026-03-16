@@ -22,6 +22,7 @@ brew "tig"
 brew "git-extras"
 brew "uv"
 brew "zsh-syntax-highlighting"  # Fish-like syntax highlighting for zsh
+brew "dockutil"               # Script the Dock: add/remove/rearrange apps
 
 # Apps
 cask "1password"
