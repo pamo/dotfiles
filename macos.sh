@@ -209,6 +209,16 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 ###############################################################################
+# Default Browser                                                             #
+###############################################################################
+echo "==> Default browser → Chrome"
+if command -v defaultbrowser &>/dev/null; then
+  defaultbrowser chrome
+else
+  echo "  ⚠️  defaultbrowser not installed — skipping"
+fi
+
+###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -224,6 +234,37 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 defaults write com.googlecode.iterm2 "Normal Font" -string "FiraCodeNerdFont-Regular 13"
 defaults write com.googlecode.iterm2 "Non Ascii Font" -string "FiraCodeNerdFont-Regular 13"
+
+###############################################################################
+# Caps Lock → Escape (via hidutil)                                            #
+###############################################################################
+echo "==> Remap Caps Lock → Escape"
+
+# Apply immediately
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}' >/dev/null
+
+# Persist across reboots via LaunchAgent
+AGENT_PLIST="$HOME/Library/LaunchAgents/com.local.KeyRemapping.plist"
+mkdir -p "$HOME/Library/LaunchAgents"
+cat > "$AGENT_PLIST" <<'PLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.local.KeyRemapping</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/hidutil</string>
+    <string>property</string>
+    <string>--set</string>
+    <string>{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
+PLIST
 
 ###############################################################################
 # Kill affected apps                                                          #

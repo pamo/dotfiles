@@ -23,6 +23,7 @@ brew "git-extras"
 brew "uv"
 brew "zsh-syntax-highlighting"  # Fish-like syntax highlighting for zsh
 brew "dockutil"               # Script the Dock: add/remove/rearrange apps
+brew "defaultbrowser"         # Set default browser from CLI: `defaultbrowser chrome`
 
 # Apps
 cask "1password"
