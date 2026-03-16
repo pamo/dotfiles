@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(chmod:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(grep:*)",
+      "Bash(defaults read:*)",
+      "Bash(/tmp/hotkey_lookup.txt:*)",
+      "Read(//tmp/**)",
+      "Bash(defaults domains:*)",
+      "Bash(plutil:*)"
     ]
   }
 }

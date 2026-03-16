@@ -236,6 +236,17 @@ defaults write com.googlecode.iterm2 "Normal Font" -string "FiraCodeNerdFont-Reg
 defaults write com.googlecode.iterm2 "Non Ascii Font" -string "FiraCodeNerdFont-Regular 13"
 
 ###############################################################################
+# Alfred → Cmd+Space (disable Spotlight shortcut)                             #
+###############################################################################
+echo "==> Alfred: disable Spotlight hotkey so Alfred can use Cmd+Space"
+
+# Disable Spotlight's Cmd+Space (hotkey ID 64)
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:64:enabled false" \
+  ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null ||
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:64:enabled bool false" \
+  ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+###############################################################################
 # Caps Lock → Escape (via hidutil)                                            #
 ###############################################################################
 echo "==> Remap Caps Lock → Escape"
