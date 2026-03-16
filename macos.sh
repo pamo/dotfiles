@@ -26,8 +26,8 @@ fi
 ###############################################################################
 echo "==> General UI"
 
-# Dark mode
-defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+# Dark mode (AppleScript applies immediately, defaults write alone requires logout)
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 
 # Small sidebar icons
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
@@ -236,15 +236,11 @@ defaults write com.googlecode.iterm2 "Normal Font" -string "FiraCodeNerdFont-Reg
 defaults write com.googlecode.iterm2 "Non Ascii Font" -string "FiraCodeNerdFont-Regular 13"
 
 ###############################################################################
-# Alfred → Cmd+Space (disable Spotlight shortcut)                             #
+# Alfred → Cmd+Space                                                          #
 ###############################################################################
-echo "==> Alfred: disable Spotlight hotkey so Alfred can use Cmd+Space"
-
-# Disable Spotlight's Cmd+Space (hotkey ID 64)
-/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:64:enabled false" \
-  ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null ||
-/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:64:enabled bool false" \
-  ~/Library/Preferences/com.apple.symbolichotkeys.plist
+echo "==> Alfred: disable Spotlight hotkey manually"
+echo "  ⚠️  System Settings → Keyboard → Keyboard Shortcuts → Spotlight → uncheck 'Show Spotlight search'"
+echo "  Then open Alfred and accept the Cmd+Space prompt"
 
 ###############################################################################
 # Caps Lock → Escape (via hidutil)                                            #

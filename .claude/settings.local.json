@@ -8,7 +8,11 @@
       "Bash(/tmp/hotkey_lookup.txt:*)",
       "Read(//tmp/**)",
       "Bash(defaults domains:*)",
-      "Bash(plutil:*)"
+      "Bash(plutil:*)",
+      "Bash(/usr/libexec/PlistBuddy -c \"Print :AppleSymbolicHotKeys:64\" ~/Library/Preferences/com.apple.symbolichotkeys.plist)",
+      "Bash(/usr/libexec/PlistBuddy -c \"Set :AppleSymbolicHotKeys:64:enabled false\" ~/Library/Preferences/com.apple.symbolichotkeys.plist && /usr/libexec/PlistBuddy -c \"Print :AppleSymbolicHotKeys:64:enabled\" ~/Library/Preferences/com.apple.symbolichotkeys.plist)",
+      "Bash(/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u)",
+      "Bash(osascript:*)"
     ]
   }
 }
