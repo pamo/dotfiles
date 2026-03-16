@@ -285,4 +285,7 @@ for app in "Finder" "Dock" "SystemUIServer"; do
   killall "$app" &>/dev/null
 done
 
+# Reload keyboard shortcut settings (needed for Spotlight hotkey disable)
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
 echo "Done. Some changes require logout/restart."
