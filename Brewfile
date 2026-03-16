@@ -37,10 +37,12 @@ cask "figma"
 cask "google-chrome"
 cask "iterm2"
 cask "keepingyouawake"
-cask "rectangle"          # Window tiling (replaces spectacle). macOS Tahoe has built-in tiling too
-cask "rescuetime"
 cask "lastfm"
 cask "linear-linear"
+cask "rectangle"          # Window tiling (replaces spectacle). macOS Tahoe has built-in tiling too
+cask "rescuetime"
+cask "slack"
+cask "notion"
 cask "visual-studio-code"
 
 # Fonts
