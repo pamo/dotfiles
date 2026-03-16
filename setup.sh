@@ -27,8 +27,8 @@ fi
 # `gh auth login` handles SSH key setup, git credential helper, and GitHub auth
 echo "==> GitHub authentication"
 if ! gh auth status &>/dev/null; then
-  echo "  Run: gh auth login"
-  echo "  Choose: SSH → Generate new key → Authenticate via browser"
+  echo "  Setting up GitHub auth (SSH key + credential helper)..."
+  gh auth login --git-protocol ssh
 fi
 
 # ─── Project directories ─────────────────────────────────────────────
@@ -106,6 +106,5 @@ echo ""
 echo "==> Done! Restart your terminal."
 echo ""
 echo "Manual steps:"
-echo "  1. Run 'gh auth login' if not already authenticated"
-echo "  2. Open iTerm2 — it will auto-load preferences from $DOTFILES/.iterm"
-echo "  3. To save iTerm2 changes back: open Preferences → General → Preferences → check 'Save changes to folder when iTerm2 quits'"
+echo "  1. Open iTerm2 — it will auto-load preferences from $DOTFILES/.iterm"
+echo "  2. To save iTerm2 changes back: open Preferences → General → Preferences → check 'Save changes to folder when iTerm2 quits'"
