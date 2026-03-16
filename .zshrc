@@ -16,8 +16,9 @@ source $ZSH/oh-my-zsh.sh
 # zsh-syntax-highlighting (installed via brew)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-# zoxide — `z project` to jump, `zi` for interactive
+# zoxide — `z project` to jump, `zi` for interactive, `j` as autojump alias
 eval "$(zoxide init zsh)"
+alias j=z
 
 # mise — `mise use node@22`, `mise ls` to list runtimes
 eval "$(mise activate zsh)"
