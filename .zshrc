@@ -41,12 +41,10 @@ alias cat="bat --paging=never"
 alias top="htop"
 alias dbranches='git branch | grep -v "main" | xargs git branch -D'
 
-# Prettier format staged files
-format-staged() {
-  git diff --cached --name-only --diff-filter=ACM \
-    | grep -E '\.(js|jsx|ts|tsx|json|css|scss|md)$' \
-    | xargs -r npx prettier --write
-}
+# Load custom functions from ~/me/dotfiles/functions/
+for f in ~/me/dotfiles/functions/*.zsh; do
+  source "$f"
+done
 
 # fzf key bindings
 source <(fzf --zsh) 2>/dev/null
