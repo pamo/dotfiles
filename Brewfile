@@ -20,6 +20,7 @@ brew "direnv"             # Auto-load .envrc per directory: `cd ~/dev/beyond` se
 brew "dos2unix"
 brew "tig"
 brew "git-extras"
+brew "awscli"              # AWS CLI: `aws s3 ls`, `aws sso login`
 brew "uv"
 brew "zsh-syntax-highlighting"  # Fish-like syntax highlighting for zsh
 brew "dockutil"               # Script the Dock: add/remove/rearrange apps
@@ -35,6 +36,7 @@ cask "conductor"
 cask "docker-desktop"
 cask "figma"
 cask "google-chrome"
+cask "granola"
 cask "iterm2"
 cask "keepingyouawake"
 cask "lastfm"
