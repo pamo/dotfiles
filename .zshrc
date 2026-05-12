@@ -49,3 +49,7 @@ done
 # fzf key bindings
 source <(fzf --zsh) 2>/dev/null
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
+# Prevent macOS fork-safety crashes in Python child processes (Django autoreloader)
+# Short-circuits urllib.getproxies() so forked children don't call into CoreFoundation.
+export no_proxy='*'
