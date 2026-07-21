@@ -27,7 +27,9 @@ eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 
 # Beyond
-alias bdev="aws sso login --sso-session beyond && pnpm --prefix ~/dev/beyond dev"
+bdev() {
+  aws sso login --sso-session beyond && pnpm --prefix ~/dev/beyond dev
+}
 
 # Aliases
 alias ..="cd .."
