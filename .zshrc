@@ -29,11 +29,10 @@ eval "$(direnv hook zsh)"
 # Beyond
 bdev() {
   aws sso login --sso-session beyond || return
-  # The Node AWS SDK flakes at resolving the SSO profile directly, and it prefers
-  # AWS_PROFILE over static creds. So resolve the SSO session to static temp creds
-  # and drop AWS_PROFILE for the dev process only, so the SDK uses those creds.
-  eval "$(aws configure export-credentials --profile beyond-dev --format env)"
-  env -u AWS_PROFILE pnpm --prefix ~/dev/beyond dev
+  # The Node AWS SDK needs an explicit region to resolve SSO role credentials, and
+  # AWS_REGION is empty in the shell — set it for the dev process so the secret
+  # fetch resolves the beyond-dev SSO session reliably.
+  AWS_REGION=us-east-1 pnpm --prefix ~/dev/beyond dev
 }
 
 # Aliases
