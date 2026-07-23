@@ -28,7 +28,12 @@ eval "$(direnv hook zsh)"
 
 # Beyond
 bdev() {
-  aws sso login --sso-session beyond && pnpm --prefix ~/dev/beyond dev
+  aws sso login --sso-session beyond || return
+  # The Node AWS SDK flakes at resolving the SSO profile directly, and it prefers
+  # AWS_PROFILE over static creds. So resolve the SSO session to static temp creds
+  # and drop AWS_PROFILE for the dev process only, so the SDK uses those creds.
+  eval "$(aws configure export-credentials --profile beyond-dev --format env)"
+  env -u AWS_PROFILE pnpm --prefix ~/dev/beyond dev
 }
 
 # Aliases
@@ -56,3 +61,6 @@ export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 # Short-circuits urllib.getproxies() so forked children don't call into CoreFoundation.
 export no_proxy='*'
 export PATH="/opt/homebrew/sbin:$PATH"
+
+# Added for dd-cli (DoorDash CLI)
+export PATH="$HOME/.local/bin:$PATH"
